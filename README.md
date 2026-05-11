@@ -33,7 +33,6 @@ El objetivo es simple: sobrevivir al parque. Los enemigos, no tanto.
 | 🦜 **Cotorras** | No paran de hacer daño por proximidad y emiten sonidos irritantes. |
 | 🐷 **Cerdo** | Mucha vida. El Doctor Palomo se los come. |
 | 🐦 **Gorriones** | Disparan caca muy rápido con efectos de sonido... peculiares. |
-| 🦊 **Furros** | **JEFE FINAL.** La amenaza definitiva del parque. |
 
 ---
 
@@ -47,18 +46,6 @@ El objetivo es simple: sobrevivir al parque. Los enemigos, no tanto.
 | 🍺 Cerveza | Tranquiliza al Palomo. Si bebe demasiado... game over con panza incluida |
 | 🔫 Pistola | Arma a distancia |
 | 🔪 Cuchillo | Arma cuerpo a cuerpo |
-
----
-
-## 🎨 Personalización
-
-El Doctor Palomo es altamente personalizable:
-
-- 🎩 Gorro peruano
-- 🧔 Barba
-- 🕶️ Gafas de sol
-- 🇪🇸 Bandera de España
-- Y más atuendos desbloqueables...
 
 ---
 
@@ -131,7 +118,7 @@ cd VideoJuegoGODOT
 
 ## 👥 Equipo de desarrollo
 
-Proyecto desarrollado como parte del módulo **Programación Multimedia y Dispositivos Móviles** — 2º DAM.
+Proyecto desarrollado como parte del módulo **Programación Multimedia y Dispositivos Móviles** — 2º DAM. Desarrollado por Claudia Barahona, Iván Mena, Jaime Culebras y Guillermo Campaña
 
 ---
 
