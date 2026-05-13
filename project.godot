@@ -17,9 +17,9 @@ config/icon="uid://bfyrdkd0deu00"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1920
-window/stretch/mode="canvas_items"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [gui]
@@ -33,4 +33,5 @@ theme/custom_font="uid://bov6m3lf16cuv"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
