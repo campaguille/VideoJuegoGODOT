@@ -1,3 +1,65 @@
 [gd_scene format=3 uid="uid://kllbcqr8sbb6"]
 
+[ext_resource type="Texture2D" uid="uid://5maqsj4enh5" path="res://assets/sprites/fondo tutorial.png" id="1_cfv3y"]
+[ext_resource type="Script" uid="uid://bxl2wtodvmbfn" path="res://scripts/Tutorial.gd" id="1_ci5ev"]
+[ext_resource type="AudioStream" uid="uid://bclt7qu2sjyc" path="res://assets/music/canción_fondo.mp3" id="3_pgr2e"]
+
 [node name="Tutorial" type="Node2D" unique_id=1948119030]
+script = ExtResource("1_ci5ev")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2124369183]
+offset_right = 1281.0
+offset_bottom = 723.0
+texture = ExtResource("1_cfv3y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1902036760]
+offset_left = 289.0
+offset_top = 231.0
+offset_right = 933.0
+offset_bottom = 451.0
+color = Color(1, 1, 1, 0.37254903)
+
+[node name="instrucciones" type="Label" parent="." unique_id=1239402758]
+offset_left = 323.0
+offset_top = 234.0
+offset_right = 906.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0.27581614, 0.00094172626, 0.521157, 1)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="btnSiguiente" type="Button" parent="." unique_id=913512028]
+offset_left = 993.0
+offset_top = 637.0
+offset_right = 1242.0
+offset_bottom = 703.0
+theme_override_font_sizes/font_size = 25
+text = "Siguiente >>"
+
+[node name="btnAnterior" type="Button" parent="." unique_id=2111361275]
+offset_left = 73.0
+offset_top = 630.0
+offset_right = 312.0
+offset_bottom = 702.0
+theme_override_font_sizes/font_size = 25
+text = "<< Anterior"
+
+[node name="btnJugar" type="Button" parent="." unique_id=1556536462]
+offset_left = 530.0
+offset_top = 630.0
+offset_right = 733.0
+offset_bottom = 699.0
+theme_override_font_sizes/font_size = 25
+text = "JUGAR"
+
+[node name="Música de fondo" type="AudioStreamPlayer" parent="." unique_id=794473514]
+stream = ExtResource("3_pgr2e")
+volume_db = 1.165
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="btnSiguiente" to="." method="_on_btn_siguiente_pressed"]
+[connection signal="pressed" from="btnAnterior" to="." method="_on_btn_anterior_pressed"]
+[connection signal="pressed" from="btnJugar" to="." method="_on_btn_jugar_pressed"]

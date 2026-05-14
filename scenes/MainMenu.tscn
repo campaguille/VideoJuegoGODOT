@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://di82jdtw2nwmq"]
 
+[ext_resource type="Script" uid="uid://t16tk2l3k0bb" path="res://scripts/MainMenu.gd" id="1_2wh52"]
 [ext_resource type="Texture2D" uid="uid://6oq1ms3e25vo" path="res://assets/sprites/FondoPantallaInicio.png" id="1_yqorp"]
-[ext_resource type="AudioStream" uid="uid://bxd1murq1hm56" path="res://assets/music/canción_fondo.mp3" id="2_0ykhv"]
+[ext_resource type="AudioStream" uid="uid://bclt7qu2sjyc" path="res://assets/music/canción_fondo.mp3" id="2_0ykhv"]
+[ext_resource type="AudioStream" uid="uid://dw0a2vrcc3hlk" path="res://assets/music/sonido click.mp3" id="4_ow34m"]
 
 [node name="MainMenu" type="Control" unique_id=916452086]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2wh52")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=595646145]
 layout_direction = 1
@@ -25,7 +28,7 @@ grow_vertical = 2
 texture = ExtResource("1_yqorp")
 stretch_mode = 6
 
-[node name="Label" type="Label" parent="." unique_id=875599622]
+[node name="Título" type="Label" parent="." unique_id=875599622]
 layout_mode = 0
 offset_left = 312.00003
 offset_top = 93.0
@@ -49,29 +52,38 @@ offset_right = 948.6592
 offset_bottom = 823.0
 scale = Vector2(0.9089981, 0.6351179)
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1865483550]
+[node name="btn_jugar" type="Button" parent="VBoxContainer" unique_id=1865483550]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "JUGAR"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=117684590]
+[node name="Btn tutorial" type="Button" parent="VBoxContainer" unique_id=117684590]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "TUTORIAL"
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=435325755]
+[node name="Btn personalizar" type="Button" parent="VBoxContainer" unique_id=435325755]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "PERSONALIZAR
 "
 
-[node name="Button4" type="Button" parent="VBoxContainer" unique_id=172228646]
+[node name="Btn salir" type="Button" parent="VBoxContainer" unique_id=172228646]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "SALIR"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=114627870]
+[node name="Música de fondo" type="AudioStreamPlayer" parent="." unique_id=114627870]
 stream = ExtResource("2_0ykhv")
 volume_db = 1.165
 autoplay = true
 parameters/looping = true
+
+[node name="sonidoClick" type="AudioStreamPlayer2D" parent="." unique_id=586391560]
+stream = ExtResource("4_ow34m")
+volume_db = 24.0
+
+[connection signal="pressed" from="VBoxContainer/btn_jugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Btn tutorial" to="." method="_on_btn_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/Btn personalizar" to="." method="_on_btn_personalizar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Btn salir" to="." method="_on_btn_salir_pressed"]
