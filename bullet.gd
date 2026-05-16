@@ -7,9 +7,8 @@ func _physics_process(delta):
 	var velocity = direction * speed * delta
 	global_position = global_position + velocity
 
-
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "enemy":
+	if "enemy" in body.name:
 		body.kill()
 		queue_free()
 	else:

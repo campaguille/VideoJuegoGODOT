@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://di82jdtw2nwmq"]
 
-[ext_resource type="Script" uid="uid://t16tk2l3k0bb" path="res://scripts/MainMenu.gd" id="1_2wh52"]
+[ext_resource type="Script" uid="uid://bqrhmnjlugy3h" path="res://scripts/MainMenu.gd" id="1_2wh52"]
 [ext_resource type="Texture2D" uid="uid://6oq1ms3e25vo" path="res://assets/sprites/FondoPantallaInicio.png" id="1_yqorp"]
-[ext_resource type="AudioStream" uid="uid://bclt7qu2sjyc" path="res://assets/music/canción_fondo.mp3" id="2_0ykhv"]
+[ext_resource type="AudioStream" uid="uid://bxd1murq1hm56" path="res://assets/music/canción_fondo.mp3" id="2_0ykhv"]
 [ext_resource type="AudioStream" uid="uid://dw0a2vrcc3hlk" path="res://assets/music/sonido click.mp3" id="4_ow34m"]
 
 [node name="MainMenu" type="Control" unique_id=916452086]
