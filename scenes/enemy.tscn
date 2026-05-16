@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bpldhdp65ebf5"]
+
+[ext_resource type="Script" uid="uid://cwd6d6qpryr0r" path="res://scenes/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://crb6tw2ro0hrs" path="res://assets/sprites/Copilot_20260516_144432.png" id="1_7k104"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
+radius = 47.999992
+height = 147.99998
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qi2p4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7k104")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="enemy" type="CharacterBody2D" unique_id=539148575]
+script = ExtResource("1_4gyqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365584560]
+position = Vector2(9.094947e-13, -5.9604645e-08)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CapsuleShape2D_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1326767952]
+position = Vector2(-7.6293945e-06, 0.9999771)
+scale = Vector2(0.08935544, 0.08935544)
+sprite_frames = SubResource("SpriteFrames_qi2p4")

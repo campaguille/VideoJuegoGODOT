@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://paw8mwil0opc"]
+
+[ext_resource type="Texture2D" uid="uid://20uam642bthj" path="res://assets/sprites/Fondo.jpg" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://oq436usgf1jd" path="res://bullet.gd" id="1_v8qja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
+size = Vector2(18, 6)
+
+[node name="bullet" type="Area2D" unique_id=765899012]
+script = ExtResource("1_v8qja")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414391163]
+position = Vector2(2.9802322e-08, 0)
+scale = Vector2(0.03398122, 0.016393436)
+texture = ExtResource("1_v7oki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1909453366]
+shape = SubResource("RectangleShape2D_v8qja")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://hbda0ulxbxha"]
 
+[ext_resource type="PackedScene" uid="uid://dugch38edimw4" path="res://scenes/player.tscn" id="1_vh257"]
+[ext_resource type="Texture2D" uid="uid://20uam642bthj" path="res://assets/sprites/Fondo.jpg" id="2_xy3my"]
+[ext_resource type="PackedScene" uid="uid://bpldhdp65ebf5" path="res://scenes/enemy.tscn" id="3_cxv17"]
+
 [node name="GameScene" type="Node2D" unique_id=1839800112]
+position = Vector2(110, 33)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1066614634]
+self_modulate = Color(0.1263944, 0.49315646, 0.49315646, 1)
+position = Vector2(530.5, 337.99997)
+scale = Vector2(2.4319854, 2.1311471)
+texture = ExtResource("2_xy3my")
+
+[node name="Player" parent="." unique_id=1827162695 instance=ExtResource("1_vh257")]
+position = Vector2(-30, 45)
+
+[node name="enemy" parent="." unique_id=539148575 instance=ExtResource("3_cxv17")]
+position = Vector2(406, 215)
