@@ -53,13 +53,13 @@ El objetivo es simple: sobrevivir al parque. Los enemigos, no tanto.
 
 ```
 [Menú Principal]
-      ↓
+	  ↓
    [Tutorial]
-      ↓
+	  ↓
   [Nivel de Juego] ←→ [Pausa]
-      ↓
+	  ↓
 [Victoria] / [Game Over]
-      ↓
+	  ↓
 [Menú Principal]
 ```
 
