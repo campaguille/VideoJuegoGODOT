@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bpldhdp65ebf5" path="res://scenes/enemy.tscn" id="3_cxv17"]
 [ext_resource type="Texture2D" uid="uid://b2g15rgcc518f" path="res://assets/sprites/free_wall_dungeon_autotile_14.png" id="4_18ig4"]
 [ext_resource type="Texture2D" uid="uid://b2m1i6pvtnuda" path="res://assets/sprites/free_ground_autotile_17.png" id="5_7s5hy"]
+[ext_resource type="AudioStream" uid="uid://bclt7qu2sjyc" path="res://assets/music/canción_fondo.mp3" id="5_xs4ih"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7s5hy"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -81,3 +82,9 @@ speed = 300.0
 [node name="enemy2" parent="." unique_id=1562312231 instance=ExtResource("3_cxv17")]
 position = Vector2(1021, 121)
 speed = 300.0
+
+[node name="Música de fondo" type="AudioStreamPlayer" parent="." unique_id=152340888]
+stream = ExtResource("5_xs4ih")
+volume_db = 1.165
+autoplay = true
+parameters/looping = true
