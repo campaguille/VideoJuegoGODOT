@@ -61,7 +61,7 @@ func dash(target_direction: Vector2):
 	
 	# Desactivamos las colisiones con enemigos/obstáculos temporalmente 
 	$Area2D.monitoring = false
-	set_collision_mask_value(1, false)
+
 	
 
 	# Creamos un Tween que moverá la POSICIÓN directamente
@@ -80,7 +80,6 @@ func dash(target_direction: Vector2):
 	
 	# Volvemos a activar colisiones cuando termina el dash
 	$Area2D.monitoring = true
-	set_collision_mask_value(1, true)
 
 	
 
