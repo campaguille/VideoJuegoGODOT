@@ -75,9 +75,9 @@ tile_set = SubResource("TileSet_7s5hy")
 position = Vector2(-30, 45)
 
 [node name="enemy" parent="." unique_id=539148575 instance=ExtResource("3_cxv17")]
-position = Vector2(406, 215)
-speed = 300.0
+position = Vector2(361, 106)
+rotation = 1.5707964
 
 [node name="enemy2" parent="." unique_id=1562312231 instance=ExtResource("3_cxv17")]
-position = Vector2(1021, 121)
-speed = 300.0
+position = Vector2(996, 79)
+rotation = 1.5707964

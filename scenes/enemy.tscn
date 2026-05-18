@@ -19,7 +19,6 @@ animations = [{
 
 [node name="enemy" type="CharacterBody2D" unique_id=539148575]
 script = ExtResource("1_4gyqm")
-speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365584560]
 position = Vector2(9.094947e-13, -5.9604645e-08)
@@ -35,8 +34,14 @@ sprite_frames = SubResource("SpriteFrames_qi2p4")
 path_desired_distance = 82.05
 debug_enabled = true
 
-[node name="Timer" type="Timer" parent="." unique_id=787658990]
+[node name="TimerPathFinding" type="Timer" parent="." unique_id=787658990]
 wait_time = 0.415
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="TimerTarget" type="Timer" parent="." unique_id=1284341824]
+wait_time = 5.972
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1809367976]
+
+[connection signal="timeout" from="TimerPathFinding" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerTarget" to="." method="_on_timer_target_timeout"]
