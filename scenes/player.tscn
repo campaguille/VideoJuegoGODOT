@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dugch38edimw4"]
 
-[ext_resource type="Script" uid="uid://ciyo8qr5f5tc7" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://ch5g5v4tcvf7g" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cbvbc8v1k028i" path="res://assets/sprites/Copilot_20260516_143406.png" id="2_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
@@ -34,8 +34,12 @@ scale = Vector2(0.067382805, 0.06315105)
 sprite_frames = SubResource("SpriteFrames_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=817313726]
+process_callback = 0
+limit_enabled = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1925956260]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1529622778]
 shape = SubResource("CapsuleShape2D_g2els")

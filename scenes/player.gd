@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var dash_duration = 0.1   # Cuánto tarda en recorrer esa distancia
 @export var dash_cooldown = 0.6    # tiempop de espera entre dashes
 
-
+var current_dash_speed: float = 0.0
 var bullet = preload("res://bullet.tscn")
 var screen_size
 var can_dash = true
@@ -57,33 +57,33 @@ func fire():
 
 
 func dash(target_direction: Vector2):
+	if not can_dash: return
+	
 	can_dash = false
-	
-	# Desactivamos las colisiones con enemigos/obstáculos temporalmente 
 	$Area2D.monitoring = false
-
+	set_collision_mask_value(3, false)
 	
+	var max_dash_speed = (dash_distance / dash_duration) * 1.5 
+	current_dash_speed = max_dash_speed
 
-	# Creamos un Tween que moverá la POSICIÓN directamente
 	var tween = create_tween()
-	
-	# Calculamos el punto exacto del mapa a donde queremos llegar
-	var target_position = global_position + (target_direction * dash_distance)
-	
-	# Le decimos al tween: "Mueve mi propiedad 'global_position' hacia 'target_position' en 'dash_duration' segundos"
-	tween.tween_property(self, "global_position", target_position, dash_duration)\
+	tween.tween_property(self, "current_dash_speed", 0.0, dash_duration)\
 		.set_trans(Tween.TRANS_CUBIC)\
 		.set_ease(Tween.EASE_OUT)
 	
-	# Esperamos a que el Tween termine de mover al personaje
-	await tween.finished
+
+	var dash_timer = get_tree().create_timer(dash_duration)
+	while dash_timer.time_left > 0:
+		velocity = target_direction * current_dash_speed
+		
+		move_and_slide() 
+		await get_tree().physics_frame 
+
+	current_dash_speed = 0.0
 	
-	# Volvemos a activar colisiones cuando termina el dash
+	set_collision_mask_value(3, true)
 	$Area2D.monitoring = true
 
-	
-
-	# Esperamos el tiempo de recarga
 	await get_tree().create_timer(dash_cooldown).timeout
 	can_dash = true
 
