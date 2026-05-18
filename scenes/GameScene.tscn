@@ -58,6 +58,7 @@ texture = ExtResource("4_18ig4")
 
 [sub_resource type="TileSet" id="TileSet_7s5hy"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 6
 sources/1 = SubResource("TileSetAtlasSource_18ig4")
 
 [node name="GameScene" type="Node2D" unique_id=1839800112]
@@ -73,11 +74,17 @@ tile_set = SubResource("TileSet_7s5hy")
 
 [node name="Player" parent="." unique_id=1827162695 instance=ExtResource("1_vh257")]
 position = Vector2(-30, 45)
+collision_layer = 2
+collision_mask = 5
 
 [node name="enemy" parent="." unique_id=539148575 instance=ExtResource("3_cxv17")]
 position = Vector2(361, 106)
 rotation = 1.5707964
+collision_layer = 4
+collision_mask = 3
 
 [node name="enemy2" parent="." unique_id=1562312231 instance=ExtResource("3_cxv17")]
 position = Vector2(996, 79)
 rotation = 1.5707964
+collision_layer = 4
+collision_mask = 3

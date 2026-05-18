@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var ray_cast_2d = $RayCast2D
 @onready var timer = $TimerTarget
 
-@export var speed: float = 300.0
+@export var speed: float = 200.0
 @export var angle: float = 120.0
 @export var angle_length: float = 500.0
 
