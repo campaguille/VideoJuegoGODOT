@@ -3,9 +3,9 @@ extends Node2D
 #1. Defino la lista de textos
 var textos_tutorial = [
 	"HISTORIA: Eres el Dr. Palomo. Un médico... una mordedura radioactiva... y un tumor que lo cambiará todo.",
-	"MOVIMIENTO: Usa las FLECHAS DEL TECLADO para moverte por el parque y esquivar a esas molestas ardillas.",
+	"MOVIMIENTO: Usa las TECLAS wsad para moverte por el parque y esquivar a esas molestas ardillas.",
 	"APUNTADO: El Doctor Palomo siempre mirará hacia donde apunte el PUNTERO DEL RATÓN.",
-	"DISPARO: Pulsa la tecla ESPACIO para abrir fuego. ¡Cuidado con los gorriones, disparan rápido!",
+	"DISPARO: Pulsa el ratón para abrir fuego. ¡Cuidado con los gorriones, disparan rápido!",
 	"CURACIÓN: El alpiste recupera vida y el bocadillo te cura por completo. No te fíes de las pastillas...",
 	"FURIA: Si el tumor cerebral hace efecto, los controles se volverán locos. ¡Úsalo a tu favor!",
 	"¡RECUERDA!: Si bebes demasiada cerveza, se acabó la partida. ¡A por ellos!"

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://kllbcqr8sbb6"]
 
-[ext_resource type="Texture2D" uid="uid://5maqsj4enh5" path="res://assets/sprites/fondo tutorial.png" id="1_cfv3y"]
-[ext_resource type="Script" uid="uid://bxl2wtodvmbfn" path="res://scripts/Tutorial.gd" id="1_ci5ev"]
-[ext_resource type="AudioStream" uid="uid://bclt7qu2sjyc" path="res://assets/music/canción_fondo.mp3" id="3_pgr2e"]
+[ext_resource type="Texture2D" uid="uid://b7o77j8bi2x51" path="res://assets/sprites/fondo tutorial.png" id="1_cfv3y"]
+[ext_resource type="Script" uid="uid://djdhigys6ikkj" path="res://scripts/Tutorial.gd" id="1_ci5ev"]
+[ext_resource type="AudioStream" uid="uid://bxd1murq1hm56" path="res://assets/music/canción_fondo.mp3" id="3_pgr2e"]
 
 [node name="Tutorial" type="Node2D" unique_id=1948119030]
 script = ExtResource("1_ci5ev")
