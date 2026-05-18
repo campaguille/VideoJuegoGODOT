@@ -1,51 +1,45 @@
 extends CharacterBody2D
 
-@export var speed = 400            # Velocidad de movimiento
-@export var dash_distance = 400   # Distancia en píxeles que recorrerá el dash
-@export var dash_duration = 0.1   # Cuánto tarda en recorrer esa distancia
-@export var dash_cooldown = 0.6    # tiempop de espera entre dashes
+@export var speed = 400
+@export var dash_distance = 400
+@export var dash_duration = 0.1
+@export var dash_cooldown = 0.6
 
 var current_dash_speed: float = 0.0
 var bullet = preload("res://bullet.tscn")
 var screen_size
 var can_dash = true
 
-# Al cargar el juego se redimesiona el tamaño de pantalla
+@onready var anim = $AnimatedSprite2D
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
-# Cada frame se ejecuta este metodo
 func _process(delta):
-	
-	# Creamos un vector combinando los ejes horizontal y vertical.
 	var input_dir = Vector2(
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")
 	).normalized()
-	
-	# Si el personaje se esta moviendo 
+
 	if input_dir != Vector2.ZERO:
-		# La velocidad sera la direcion multiplicada por la speed
 		velocity = input_dir * speed
+		if anim.animation != "default" or not anim.is_playing():
+			anim.play("default")
 	else:
-		# Si no frena al personaje suavemente hasta llegar a 0
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
-	
-	#
+		if anim.is_playing():
+			anim.stop()
+
 	look_at(get_global_mouse_position())
 	move_and_slide()
-	
-	# Al pulsar al boton atacar (click izquierdo) 
+
 	if Input.is_action_just_pressed("attack"):
 		fire()
-		
-	# 3. Al pulsar al boton de dash (espacio)
+
 	if Input.is_action_just_pressed("dash") and can_dash:
-		# Calculamos la dirección antes de mandarla al método
 		var dash_dir = input_dir if input_dir != Vector2.ZERO else Vector2.RIGHT.rotated(rotation)
-		dash(dash_dir) # Le pasamos la dirección al método
-	
+		dash(dash_dir)
 
 func fire():
 	var offset = 30
@@ -55,32 +49,29 @@ func fire():
 	bullet_instance.direction = Vector2.RIGHT.rotated(rotation)
 	get_tree().get_root().add_child(bullet_instance)
 
-
 func dash(target_direction: Vector2):
-	if not can_dash: return
-	
+	if not can_dash:
+		return
+
 	can_dash = false
 	$Area2D.monitoring = false
 	set_collision_mask_value(3, false)
-	
-	var max_dash_speed = (dash_distance / dash_duration) * 1.5 
+
+	var max_dash_speed = (dash_distance / dash_duration) * 1.5
 	current_dash_speed = max_dash_speed
 
 	var tween = create_tween()
 	tween.tween_property(self, "current_dash_speed", 0.0, dash_duration)\
 		.set_trans(Tween.TRANS_CUBIC)\
 		.set_ease(Tween.EASE_OUT)
-	
 
 	var dash_timer = get_tree().create_timer(dash_duration)
 	while dash_timer.time_left > 0:
 		velocity = target_direction * current_dash_speed
-		
-		move_and_slide() 
-		await get_tree().physics_frame 
+		move_and_slide()
+		await get_tree().physics_frame
 
 	current_dash_speed = 0.0
-	
 	set_collision_mask_value(3, true)
 	$Area2D.monitoring = true
 
