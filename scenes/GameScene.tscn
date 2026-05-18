@@ -75,21 +75,14 @@ tile_set = SubResource("TileSet_7s5hy")
 
 [node name="Player" parent="." unique_id=1827162695 instance=ExtResource("1_vh257")]
 position = Vector2(-30, 45)
-collision_layer = 2
-collision_mask = 5
 
 [node name="enemy" parent="." unique_id=539148575 instance=ExtResource("3_cxv17")]
 position = Vector2(361, 106)
 rotation = 1.5707964
-collision_layer = 4
-collision_mask = 3
 
 [node name="enemy2" parent="." unique_id=1562312231 instance=ExtResource("3_cxv17")]
 position = Vector2(947, 106)
 rotation = 1.5707964
-collision_layer = 4
-collision_mask = 3
-speed = 300.0
 
 [node name="Música de fondo" type="AudioStreamPlayer" parent="." unique_id=152340888]
 stream = ExtResource("5_xs4ih")

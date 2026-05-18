@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://dugch38edimw4"]
 
-[ext_resource type="Script" uid="uid://ch5g5v4tcvf7g" path="res://scenes/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://cbvbc8v1k028i" path="res://assets/sprites/Copilot_20260516_143406.png" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://dccg4wylo35do" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://nowcajbich88" path="res://assets/sprites/sin fondo/palomo cenital.png" id="2_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
-radius = 32.0
-height = 92.0
+radius = 27.0
+height = 60.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qhqgy")
+"texture": ExtResource("2_g2els")
 }],
 "loop": true,
 "name": &"default",
@@ -19,10 +19,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 35.0
-height = 98.0
+radius = 29.0
+height = 68.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1827162695]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1577382747]
@@ -30,6 +32,7 @@ shape = SubResource("CapsuleShape2D_u8vuu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2072271867]
 position = Vector2(0.5000007, -0.49999905)
+rotation = -1.5707964
 scale = Vector2(0.067382805, 0.06315105)
 sprite_frames = SubResource("SpriteFrames_g2els")
 

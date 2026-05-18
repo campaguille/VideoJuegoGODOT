@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpldhdp65ebf5"]
 
-[ext_resource type="Script" uid="uid://c1hyjriws1voi" path="res://scenes/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://crb6tw2ro0hrs" path="res://assets/sprites/Copilot_20260516_144432.png" id="1_7k104"]
+[ext_resource type="Script" uid="uid://bl4ehb71mdvf8" path="res://scenes/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://m118uq5cxa46" path="res://assets/sprites/sin fondo/ardilla.png" id="2_md0e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
 radius = 24.083185
@@ -10,7 +10,7 @@ radius = 24.083185
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7k104")
+"texture": ExtResource("2_md0e3")
 }],
 "loop": true,
 "name": &"default",
@@ -18,6 +18,8 @@ animations = [{
 }]
 
 [node name="enemy" type="CharacterBody2D" unique_id=539148575]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365584560]
@@ -26,7 +28,8 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("CircleShape2D_md0e3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1326767952]
-position = Vector2(-2.0624995, 1.0000019)
+position = Vector2(6.0000005, 3)
+rotation = -1.5707964
 scale = Vector2(0.07214354, 0.064208955)
 sprite_frames = SubResource("SpriteFrames_qi2p4")
 
