@@ -176,6 +176,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Continuar"
 
+[node name="reiniciar" type="Button" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=801340586]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Reiniciar"
+
 [node name="salir" type="Button" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=9205614]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
