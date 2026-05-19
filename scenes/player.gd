@@ -9,8 +9,10 @@ var current_dash_speed: float = 0.0
 var bullet = preload("res://bullet.tscn")
 var screen_size
 var can_dash = true
+var puntos := 0
 
 @onready var anim = $AnimatedSprite2D
+@onready var hud = get_tree().get_root().get_node("GameScene/HUD")  #referencia al CanvasLayer
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -84,3 +86,7 @@ func kill():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if "enemy" in body.name:
 		kill()
+		
+func add_score(points: int):
+	puntos += points
+	hud.update_score(puntos)

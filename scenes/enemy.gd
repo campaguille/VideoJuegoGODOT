@@ -105,6 +105,7 @@ func is_in_ray() -> bool:
 
 
 func kill():
+	player.add_score(100)
 	queue_free()
 
 
