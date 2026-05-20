@@ -15,6 +15,10 @@ run/main_scene="uid://di82jdtw2nwmq"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="uid://bfyrdkd0deu00"
 
+[autoload]
+
+MCPRuntime="*uid://iihkt80xq6se"
+
 [display]
 
 window/size/viewport_width=1280

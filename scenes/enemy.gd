@@ -21,6 +21,9 @@ var posicion_inicial: Vector2
 var rotacion_inicial: float
 var angle_rad: float
 
+# Controla si el enemigo está quieto recuperándose tras golpear
+var esta_quieto_atacando: bool = false
+
 func _ready():
 	add_to_group("enemy")
 	player           = get_tree().get_first_node_in_group("player")
@@ -31,6 +34,19 @@ func _ready():
 
 func _physics_process(_delta):
 	if player == null: return
+
+	# PRIORIDAD ABSOLUTA: Si acaba de golpear (por donde sea), se queda quieto
+	if esta_quieto_atacando:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
+	# Comprobamos colisiones físicas inmediatas (por detrás o cualquier flanco)
+	for i in get_slide_collision_count():
+		var col = get_slide_collision(i)
+		if col.get_collider() == player:
+			_intentar_dañar()
+			return # Frenamos el proceso aquí para evitar que _volver_origen pise la velocidad
 
 	if not player_target:
 		if _en_cono() and _raycast_ok():
@@ -43,7 +59,6 @@ func _physics_process(_delta):
 	var dist = global_position.distance_to(player.global_position)
 
 	if dist <= distancia_ataque:
-		# Está en contacto: detiene navegación, aplica daño, no empuja
 		velocity = Vector2.ZERO
 		_intentar_dañar()
 		move_and_slide()
@@ -52,12 +67,6 @@ func _physics_process(_delta):
 		var next = nav.get_next_path_position()
 		velocity = (next - global_position).normalized() * speed
 		move_and_slide()
-
-		# Detecta colisión física directa con el player por si acaso
-		for i in get_slide_collision_count():
-			var col = get_slide_collision(i)
-			if col.get_collider() == player:
-				_intentar_dañar()
 
 	if velocity.length() > 5:
 		anim.play("default")
@@ -88,8 +97,19 @@ func _raycast_ok() -> bool:
 func _intentar_dañar():
 	if not puede_dañar: return
 	puede_dañar = false
-	if player.has_method("recibir_danio"):
+	
+	if is_instance_valid(player) and player.has_method("recibir_danio"):
 		player.recibir_danio(dano)
+	
+	# Activa la pausa de movimiento obligatoria
+	esta_quieto_atacando = true
+	velocity = Vector2.ZERO
+	
+	# Espera 0.6 segundos quieto antes de volver a hacer cualquier cosa
+	await get_tree().create_timer(0.6).timeout
+	esta_quieto_atacando = false
+	
+	# Cooldown para poder volver a infligir daño físico
 	get_tree().create_timer(cooldown_dano).timeout.connect(func(): puede_dañar = true)
 
 func recibir_danio(cantidad: int):
@@ -98,7 +118,8 @@ func recibir_danio(cantidad: int):
 		kill()
 
 func kill():
-	if player: player.add_score(puntos_al_morir)
+	if is_instance_valid(player) and player.has_method("add_score"):
+		player.add_score(puntos_al_morir)
 	queue_free()
 
 func _on_timer_target_timeout():
