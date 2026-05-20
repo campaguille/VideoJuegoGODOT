@@ -1,3 +1,102 @@
 [gd_scene format=3 uid="uid://k8vuels6avro"]
 
-[node name="Enemy2" type="Node2D" unique_id=122419561]
+[ext_resource type="PackedScene" uid="uid://bpldhdp65ebf5" path="res://scenes/enemy.tscn" id="1_wc7mj"]
+[ext_resource type="Texture2D" uid="uid://bsdt1oo7558ad" path="res://assets/sprites/sin fondo/Copilot_20260520_203915.png" id="2_3neu4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhmjl"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(14, 200, 185, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23kvp"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(199, 200, 185, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e2ig"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(754, 200, 185, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsk8u"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(14, 400, 185, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thqno"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(199, 400, 185, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4k25"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(754, 400, 185, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slk5t"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(14, 600, 185, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmi40"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(14, 0, 185, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wc7mj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhmjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23kvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e2ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsk8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thqno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4k25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slk5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmi40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thqno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhmjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23kvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e2ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsk8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thqno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4k25")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="enemy" unique_id=539148575 instance=ExtResource("1_wc7mj")]
+speed = 150.0
+dano = 30
+vida = 60
+puntos_al_morir = 100
+angle = 360.0
+cooldown_dano = 2.0
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1326767952]
+position = Vector2(2, 4)
+sprite_frames = SubResource("SpriteFrames_wc7mj")
+frame_progress = 0.24619612
