@@ -6,7 +6,8 @@ extends CharacterBody2D
 @export var dash_cooldown = 0.6
 
 var current_dash_speed: float = 0.0
-var bullet = preload("res://bullet.tscn")
+var bullet : Resource = preload("res://scenes/bullet.tscn")
+var melee : Resource = preload("res://scenes/melee.tscn")
 var screen_size
 var can_dash = true
 var puntos := 0
@@ -38,6 +39,13 @@ func _process(delta):
 
 	if Input.is_action_just_pressed("attack"):
 		fire()
+	
+	if Input.is_action_just_pressed("melee"):
+		var offset = 50
+		var melee_instance : Area2D = melee.instantiate()
+		melee_instance.position = Vector2.RIGHT * offset
+		melee_instance.rotation = 0
+		add_child(melee_instance)
 
 	if Input.is_action_just_pressed("dash") and can_dash:
 		var dash_dir = input_dir if input_dir != Vector2.ZERO else Vector2.RIGHT.rotated(rotation)
