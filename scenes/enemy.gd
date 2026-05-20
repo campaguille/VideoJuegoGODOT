@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var navigation_agent_2d = $NavigationAgent2D
 @onready var ray_cast_2d = $RayCast2D
 @onready var timer = $TimerTarget
+@onready var anim = $AnimatedSprite2D
 
 @export var speed: float = 200.0
 @export var angle: float = 120.0
@@ -21,90 +22,92 @@ func _ready():
 	angle_rad = deg_to_rad(angle / 2)
 	posicion_inicial = global_position
 	rotacion_inicial = global_rotation
-	
+
 
 func _draw():
-	# Dibujamos las líneas de debug
 	var left_dir = direction_angle.rotated(-angle_rad) * angle_length
 	var right_dir = direction_angle.rotated(angle_rad) * angle_length
 	draw_line(Vector2.ZERO, left_dir, Color.YELLOW, 2)
 	draw_line(Vector2.ZERO, right_dir, Color.YELLOW, 2)
-	
-	
 
 
 func _physics_process(_delta):
 	var next_path_pos: Vector2
 	var direction: Vector2
-	
-	if player_target == false: 
-		if is_in_cone() and is_in_ray() :
+
+	if not player_target:
+		if is_in_cone() and is_in_ray():
 			player_target = true
 			timer.start()
-			
+
 			look_at(player.global_position)
 			next_path_pos = navigation_agent_2d.get_next_path_position()
 			direction = (next_path_pos - global_position).normalized()
-	
+
 			velocity = direction * speed
 			move_and_slide()
+
 		else:
 			var distancia_a_casa = global_position.distance_to(posicion_inicial)
-			
+
 			if distancia_a_casa > 5.0:
 				navigation_agent_2d.target_position = posicion_inicial
 				next_path_pos = navigation_agent_2d.get_next_path_position()
 				direction = (next_path_pos - global_position).normalized()
-				
+
 				look_at(next_path_pos)
 				velocity = direction * speed
 				move_and_slide()
+
 			else:
-				
-					global_position = posicion_inicial
-					velocity = Vector2.ZERO
-				
-					# CAMBIO AQUÍ: En vez de mirar a 0, vuelve a su rotación original
-					global_rotation = rotacion_inicial 
-				
-				
-			
-			
-			
+				global_position = posicion_inicial
+				velocity = Vector2.ZERO
+				global_rotation = rotacion_inicial
+
 	else:
-		is_in_cone() 
+		is_in_cone()
 		is_in_ray()
 		look_at(player.global_position)
+
 		next_path_pos = navigation_agent_2d.get_next_path_position()
 		direction = (next_path_pos - global_position).normalized()
-	
+
 		velocity = direction * speed
 		move_and_slide()
-			
-			
+
+	# 🔥 SISTEMA DE ANIMACIÓN IGUAL QUE EL PLAYER
+	update_animation()
 
 
+func update_animation():
+	if velocity.length() > 10:
+		if anim.animation != "default" or not anim.is_playing():
+			anim.play("default")
+	else:
+		if anim.is_playing():
+			anim.stop()
 
 
 func is_in_cone():
 	var player_local_position = to_local(player.global_position)
-	var angle_to_player  = direction_angle.angle_to(player_local_position)
+	var angle_to_player = direction_angle.angle_to(player_local_position)
 	var distance_player = player_local_position.length()
 
-	return abs(angle_to_player) <= angle_rad && distance_player < angle_length
+	return abs(angle_to_player) <= angle_rad and distance_player < angle_length
+
 
 func is_in_ray() -> bool:
 	ray_cast_2d.target_position = to_local(player.global_position)
 	ray_cast_2d.force_raycast_update()
-	
+
 	var collider = ray_cast_2d.get_collider()
-	
-	if collider == player:
-		return true
-	return false
-	
+	return collider == player
+
+
 func kill():
+	player.add_score(100)
 	queue_free()
+
 
 func _on_timer_timeout():
 	if is_instance_valid(player):
