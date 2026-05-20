@@ -75,7 +75,6 @@ func _physics_process(_delta):
 		velocity = direction * speed
 		move_and_slide()
 
-	# 🔥 SISTEMA DE ANIMACIÓN IGUAL QUE EL PLAYER
 	update_animation()
 
 
