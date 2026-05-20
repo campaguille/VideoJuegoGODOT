@@ -1,27 +1,23 @@
 [gd_scene format=3 uid="uid://dugch38edimw4"]
 
-[ext_resource type="Script" uid="uid://dccg4wylo35do" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://d1m2md36eklur" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://btmm6tsa5l3s" path="res://assets/sprites/ChatGPT Image 18 may 2026, 20_14_36.png" id="2_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
 radius = 27.0
 height = 60.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
-atlas = ExtResource("2_g2els")
-region = Rect2(512, 0, 256, 239)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
 region = Rect2(256, 0, 256, 239)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(512, 0, 256, 239)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_g2els")
 region = Rect2(768, 0, 256, 239)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
-atlas = ExtResource("2_g2els")
-region = Rect2(768, 239, 256, 239)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("2_g2els")
@@ -31,6 +27,9 @@ region = Rect2(0, 0, 256, 239)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dqkch")
 }, {
 "duration": 1.0,
@@ -38,9 +37,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qlg0r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ur7pv")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
@@ -67,7 +63,7 @@ position = Vector2(-0.9999995, -0.9999995)
 rotation = -7.853982
 scale = Vector2(0.21760184, 0.21759214)
 sprite_frames = SubResource("SpriteFrames_g2els")
-frame_progress = 0.75649905
+frame_progress = 0.9225913
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=817313726]
 process_callback = 0

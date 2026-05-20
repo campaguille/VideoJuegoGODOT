@@ -25,9 +25,10 @@ func _process(delta):
 	).normalized()
 
 	if input_dir != Vector2.ZERO:
-		velocity = input_dir * speed
 		if anim.animation != "default" or not anim.is_playing():
 			anim.play("default")
+			
+		velocity = input_dir * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
