@@ -91,11 +91,11 @@ volume_db = 1.165
 autoplay = true
 parameters/looping = true
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1062964442]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=848540911]
 process_mode = 3
 script = ExtResource("6_asj5k")
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=175469926]
+[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=2030073394]
 offset_right = 1280.0
 offset_bottom = 720.0
 size_flags_horizontal = 3
@@ -103,36 +103,36 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer" unique_id=404965964]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer" unique_id=618563364]
 layout_direction = 4
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="HUD/MarginContainer/HBoxContainer" unique_id=495230471]
+[node name="PanelContainer" type="PanelContainer" parent="HUD/MarginContainer/HBoxContainer" unique_id=1933319018]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer/HBoxContainer/PanelContainer" unique_id=951455770]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer/HBoxContainer/PanelContainer" unique_id=1206591265]
 layout_mode = 2
 
-[node name="puntos" type="Label" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/HBoxContainer" unique_id=581029416]
+[node name="puntos" type="Label" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/HBoxContainer" unique_id=1622598364]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 
-[node name="Label" type="Label" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/HBoxContainer" unique_id=1199079255]
+[node name="Label" type="Label" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/HBoxContainer" unique_id=115356554]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Puntos"
 
-[node name="Control" type="Control" parent="HUD/MarginContainer/HBoxContainer" unique_id=1295690796]
+[node name="Control" type="Control" parent="HUD/MarginContainer/HBoxContainer" unique_id=1343666658]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="pausa" type="Button" parent="HUD/MarginContainer/HBoxContainer" unique_id=1525621477]
+[node name="pausa" type="Button" parent="HUD/MarginContainer/HBoxContainer" unique_id=1872416118]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "‖"
 
-[node name="menuPausa" type="Control" parent="HUD" unique_id=302112516]
+[node name="menuPausa" type="Control" parent="HUD" unique_id=857223674]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
@@ -141,7 +141,7 @@ offset_top = 210.0
 offset_right = 840.0
 offset_bottom = 510.0
 
-[node name="ColorRect" type="ColorRect" parent="HUD/menuPausa" unique_id=278147564]
+[node name="ColorRect" type="ColorRect" parent="HUD/menuPausa" unique_id=1501666222]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,7 +150,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0, 0.23137255, 0.5019608)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/menuPausa/ColorRect" unique_id=1768942248]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/menuPausa/ColorRect" unique_id=108298450]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -165,18 +165,23 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="pausa" type="Label" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=938225340]
+[node name="pausa" type="Label" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=1907230026]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Menú pausa"
 horizontal_alignment = 1
 
-[node name="continuar" type="Button" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=870773677]
+[node name="continuar" type="Button" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=1663279255]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Continuar"
 
-[node name="salir" type="Button" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=1309003994]
+[node name="reiniciar" type="Button" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=1403303558]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Reiniciar"
+
+[node name="salir" type="Button" parent="HUD/menuPausa/ColorRect/VBoxContainer" unique_id=809618912]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Salir"
