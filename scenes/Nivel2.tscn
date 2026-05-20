@@ -5878,114 +5878,142 @@ rotation = 1.5707964
 [node name="enemy" parent="." unique_id=539148575 instance=ExtResource("4_asj5k")]
 position = Vector2(194, 123)
 rotation = 3.1415927
+motion_mode = 0
 
 [node name="enemy5" parent="." unique_id=1070528060 instance=ExtResource("4_asj5k")]
 position = Vector2(-43, 495)
 rotation = 1.0471976
+motion_mode = 0
 
 [node name="enemy6" parent="." unique_id=160390208 instance=ExtResource("4_asj5k")]
 position = Vector2(585, 534)
 rotation = 2.3561945
+motion_mode = 0
 
 [node name="enemy7" parent="." unique_id=81850370 instance=ExtResource("4_asj5k")]
 position = Vector2(844.00006, 631.00006)
 rotation = 1.0471976
+motion_mode = 0
 
 [node name="enemy8" parent="." unique_id=1906467738 instance=ExtResource("4_asj5k")]
 position = Vector2(480, 831)
 rotation = -1.8325958
+motion_mode = 0
 
 [node name="enemy9" parent="." unique_id=2044617043 instance=ExtResource("4_asj5k")]
 position = Vector2(1208, 831)
 rotation = -2.8797934
+motion_mode = 0
 
 [node name="enemy10" parent="." unique_id=106408429 instance=ExtResource("4_asj5k")]
 position = Vector2(106, 950)
 rotation = -4.9741883
+motion_mode = 0
 
 [node name="enemy11" parent="." unique_id=1213423752 instance=ExtResource("4_asj5k")]
 position = Vector2(68.99997, 1230)
 rotation = -6.806784
+motion_mode = 0
 
 [node name="enemy12" parent="." unique_id=1422363846 instance=ExtResource("4_asj5k")]
 position = Vector2(404, 1276)
 rotation = -9.162979
+motion_mode = 0
 
 [node name="enemy13" parent="." unique_id=601231245 instance=ExtResource("4_asj5k")]
 position = Vector2(1089, 1207.0001)
 rotation = -7.5921826
+motion_mode = 0
 
 [node name="enemy14" parent="." unique_id=631789730 instance=ExtResource("4_asj5k")]
 position = Vector2(1631, 1386)
 rotation = -8.63938
+motion_mode = 0
 
 [node name="enemy15" parent="." unique_id=1490009079 instance=ExtResource("4_asj5k")]
 position = Vector2(1525, 651)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy16" parent="." unique_id=499443611 instance=ExtResource("4_asj5k")]
 position = Vector2(1603, 651)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy17" parent="." unique_id=951909264 instance=ExtResource("4_asj5k")]
 position = Vector2(1594, 725)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy18" parent="." unique_id=924846833 instance=ExtResource("4_asj5k")]
 position = Vector2(1135, 932)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy20" parent="." unique_id=739549718 instance=ExtResource("4_asj5k")]
 position = Vector2(1149, 873)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy22" parent="." unique_id=48886684 instance=ExtResource("4_asj5k")]
 position = Vector2(1333, 813)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy29" parent="." unique_id=1410207492 instance=ExtResource("4_asj5k")]
 position = Vector2(1967, 496)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy30" parent="." unique_id=1534912349 instance=ExtResource("4_asj5k")]
 position = Vector2(1841, 1032)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy23" parent="." unique_id=1408083892 instance=ExtResource("4_asj5k")]
 position = Vector2(1287, 873)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy24" parent="." unique_id=1088072063 instance=ExtResource("4_asj5k")]
 position = Vector2(1328, 910)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy25" parent="." unique_id=1389530252 instance=ExtResource("4_asj5k")]
 position = Vector2(1192, 993)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy26" parent="." unique_id=1788328754 instance=ExtResource("4_asj5k")]
 position = Vector2(1183, 912)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy27" parent="." unique_id=1027832908 instance=ExtResource("4_asj5k")]
 position = Vector2(1234, 871)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy28" parent="." unique_id=238605395 instance=ExtResource("4_asj5k")]
 position = Vector2(1595, 434)
 rotation = -10.995575
+motion_mode = 0
 
 [node name="enemy2" parent="." unique_id=1499324831 instance=ExtResource("4_asj5k")]
 position = Vector2(370, 129)
 rotation = 3.1415927
+motion_mode = 0
 
 [node name="enemy3" parent="." unique_id=1206721160 instance=ExtResource("4_asj5k")]
 position = Vector2(797, 112)
 rotation = 3.1415927
+motion_mode = 0
 
 [node name="enemy4" parent="." unique_id=1521959880 instance=ExtResource("4_asj5k")]
 position = Vector2(1093, 191)
 rotation = 2.6179938
+motion_mode = 0
 
 [node name="Música de fondo" type="AudioStreamPlayer" parent="." unique_id=152340888]
 stream = ExtResource("5_wgh4u")
