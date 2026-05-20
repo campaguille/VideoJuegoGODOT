@@ -5,7 +5,7 @@ var volumen_efectos: float = 1.0
 var pantalla_fullscreen: bool = false
 
 var music_player: AudioStreamPlayer
-var sfx_players: Array = []
+var sfx_players: Array = [] 
 
 
 func _ready():
