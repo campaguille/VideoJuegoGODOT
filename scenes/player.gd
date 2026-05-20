@@ -14,22 +14,30 @@ var screen_size
 var can_dash = true
 var puntos := 0
 
-# Variables para el efecto de parpadeo original
 var invulnerable: bool = false
 var tween_parpadeo: Tween = null
+var posicion_inicial_nivel: Vector2 = Vector2.ZERO
 
 @onready var anim = $AnimatedSprite2D
-@onready var hud = get_tree().get_root().get_node("GameScene/HUD")  # Referencia al CanvasLayer
+@onready var hud = get_tree().get_root().get_node("GameScene/HUD")
 
 func _ready():
 	add_to_group("player")
 	screen_size = get_viewport_rect().size
 	vida_actual = vida_maxima
+	
+	# Detecta el SpawnPoint en el mapa para saber dónde revivir
+	var spawn = get_tree().current_scene.get_node_or_null("SpawnPoint")
+	if spawn:
+		posicion_inicial_nivel = spawn.global_position
+		global_position = posicion_inicial_nivel
+	else:
+		posicion_inicial_nivel = global_position
+
 	if hud and hud.has_method("update_vida"):
 		hud.update_vida(vida_actual, vida_maxima)
 
 func _process(delta):
-	# Si está executing el bucle del dash, frena el movimiento normal
 	if current_dash_speed > 0.0:
 		return
 
@@ -102,7 +110,6 @@ func dash(target_direction: Vector2):
 	await get_tree().create_timer(dash_cooldown).timeout
 	can_dash = true
 
-# SISTEMA DE DAÑO REPARADO CON PARPADEO INTEGRADO
 func recibir_danio(cantidad: int):
 	if invulnerable: 
 		return
@@ -118,7 +125,6 @@ func recibir_danio(cantidad: int):
 	_iniciar_parpadeo()
 
 func _iniciar_parpadeo():
-	# Cancela el parpadeo previo si te golpean seguido
 	if tween_parpadeo != null and tween_parpadeo.is_running():
 		tween_parpadeo.kill()
 		modulate.a = 1.0
@@ -132,7 +138,7 @@ func _iniciar_parpadeo():
 	tween_parpadeo.finished.connect(_fin_parpadeo, CONNECT_ONE_SHOT)
 
 func _fin_parpadeo():
-	modulate.a = 1.0   # Garantiza que el sprite vuelva a ser completamente visible
+	modulate.a = 1.0   
 	invulnerable = false
 	tween_parpadeo = null
 
@@ -140,7 +146,17 @@ func kill():
 	if tween_parpadeo != null and tween_parpadeo.is_running():
 		tween_parpadeo.kill()
 	modulate.a = 1.0
-	get_tree().reload_current_scene()
+	invulnerable = false
+	
+	global_position = posicion_inicial_nivel
+	velocity = Vector2.ZERO
+	current_dash_speed = 0.0
+	
+	vida_actual = vida_maxima
+	if hud and hud.has_method("update_vida"):
+		hud.update_vida(vida_actual, vida_maxima)
+		
+	get_tree().call_group("enemy", "_volver_origen")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass

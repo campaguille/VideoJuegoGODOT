@@ -1,6 +1,7 @@
 extends Control
 
-var GameManager = load("res://scripts/GameManager.gd").new()
+# CORRECCIÓN: Quitamos el .new() que duplicaba el script en memoria
+# Ahora usa directamente el Autoload global de tu proyecto
 
 var slider_musica: HSlider
 var slider_efectos: HSlider
@@ -89,12 +90,10 @@ func _ready():
 
 	cargar_valores()
 
-
 func cargar_valores():
 	slider_musica.value = GameManager.volumen_musica
 	slider_efectos.value = GameManager.volumen_efectos
 	checkbox_pantalla.button_pressed = GameManager.pantalla_fullscreen
-
 
 func _on_btn_guardar_pressed():
 	GameManager.volumen_musica = slider_musica.value
@@ -102,7 +101,6 @@ func _on_btn_guardar_pressed():
 	GameManager.pantalla_fullscreen = checkbox_pantalla.button_pressed
 	GameManager.guardar()
 	GameManager.aplicar_configuracion()
-
 
 func _on_btn_volver_pressed():
 	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

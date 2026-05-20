@@ -7,6 +7,9 @@ var accesorio_cabeza: String = "Ninguno"
 var accesorio_cara: String = "Ninguno"
 var accesorio_cuerpo: String = "Ninguno"
 
+func _ready():
+	cargar()
+
 func guardar():
 	var data = {
 		"volumen_musica": volumen_musica,
@@ -44,5 +47,20 @@ func aplicar_configuracion():
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
-func _ready():
-	cargar()
+# CONTROL DE DETECCIÓN DE OLEADA Y CAMBIO DE NIVEL
+func verificar_enemigos_vivos():
+	await get_tree().physics_frame
+	
+	# Cuenta cuántos enemigos del grupo quedan en la escena actual
+	var enemigos_restantes = get_tree().get_nodes_in_group("enemy").size()
+	
+	if enemigos_restantes == 0:
+		var ruta_escena_actual = get_tree().current_scene.scene_file_path
+		
+		# Evitamos que intente cargar el Nivel 2 si ya estamos metidos en él
+		if "Nivel2" not in ruta_escena_actual:
+			cambiar_a_nivel_2()
+
+func cambiar_a_nivel_2():
+	# CORREGIDO: Ahora busca exactamente tu archivo "Nivel2.tscn" dentro de tu carpeta "scenes"
+	get_tree().change_scene_to_file("res://scenes/Nivel2.tscn")
