@@ -63,11 +63,11 @@ script = ExtResource("1_g2els")
 shape = SubResource("CapsuleShape2D_u8vuu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2072271867]
-position = Vector2(-1.9999999, 1.7763568e-15)
+position = Vector2(-0.9999995, -0.9999995)
 rotation = -7.853982
-scale = Vector2(0.1618788, 0.1724239)
+scale = Vector2(0.21760184, 0.21759214)
 sprite_frames = SubResource("SpriteFrames_g2els")
-frame_progress = 0.5592346
+frame_progress = 0.75649905
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=817313726]
 process_callback = 0
