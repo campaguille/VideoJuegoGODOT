@@ -66,13 +66,16 @@ func _physics_process(_delta):
 	if dist <= distancia_ataque:
 		velocity = Vector2.ZERO
 		_intentar_dañar()
+		look_at(player.global_position)
 		move_and_slide()
 	else:
 		if nav:
 			nav.target_position = player.global_position
 			var next = nav.get_next_path_position()
 			velocity = (next - global_position).normalized() * speed
+			look_at(player.global_position)
 			move_and_slide()
+			
 
 	if velocity.length() > 5:
 		if anim and anim.sprite_frames and anim.sprite_frames.has_animation("default"):
