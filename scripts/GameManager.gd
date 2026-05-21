@@ -6,6 +6,7 @@ var pantalla_fullscreen: bool = false
 var accesorio_cabeza: String = "Ninguno"
 var accesorio_cara: String = "Ninguno"
 var accesorio_cuerpo: String = "Ninguno"
+var puntos_finales: int = 0
 
 const NIVELES = [
 	"res://scenes/GameScene.tscn",

@@ -8,13 +8,11 @@ var textos_tutorial = [
 	"APUNTADO: El Doctor Palomo siempre mirará hacia 
 	donde apunte el PUNTERO DEL RATÓN.",
 	"DISPARO: Pulsa el ratón para abrir fuego. ¡Cuidado con 
-	los gorriones, disparan rápido!",
-	"CURACIÓN: El alpiste recupera vida y el bocadillo te 
-	cura por completo. No te fíes de las pastillas...",
+	las ardillas, corren mucho!",
+	"CURACIÓN: El alpiste te hará recupera vida",
 	"FURIA: Si el tumor cerebral hace efecto, los controles 
 	se volverán locos. ¡Úsalo a tu favor!",
-	"¡RECUERDA!: Si bebes demasiada cerveza, se acabó la 
-	partida. ¡A por ellos!"
+	"RECUERDA: Tienes tres vidas ¡A por ellos!"
 ]
 
 #2. Variable para saber en qué página estamos

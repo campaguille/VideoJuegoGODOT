@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://di82jdtw2nwmq"]
 
-[ext_resource type="Script" uid="uid://bqrhmnjlugy3h" path="res://scripts/MainMenu.gd" id="1_2wh52"]
+[ext_resource type="Script" uid="uid://t16tk2l3k0bb" path="res://scripts/MainMenu.gd" id="1_2wh52"]
 [ext_resource type="Texture2D" uid="uid://6oq1ms3e25vo" path="res://assets/sprites/FondoPantallaInicio.png" id="1_yqorp"]
-[ext_resource type="AudioStream" uid="uid://bxd1murq1hm56" path="res://assets/music/canción_fondo.mp3" id="2_0ykhv"]
+[ext_resource type="AudioStream" uid="uid://bclt7qu2sjyc" path="res://assets/music/canción_fondo.mp3" id="2_0ykhv"]
 [ext_resource type="AudioStream" uid="uid://dw0a2vrcc3hlk" path="res://assets/music/sonido click.mp3" id="4_ow34m"]
 
 [node name="MainMenu" type="Control" unique_id=916452086]
@@ -81,7 +81,7 @@ parameters/looping = true
 
 [node name="sonidoClick" type="AudioStreamPlayer2D" parent="." unique_id=586391560]
 stream = ExtResource("4_ow34m")
-volume_db = 24.0
+volume_db = 10.0
 
 [connection signal="pressed" from="VBoxContainer/btn_jugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Btn tutorial" to="." method="_on_btn_tutorial_pressed"]

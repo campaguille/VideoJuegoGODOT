@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://o72nda57wade"]
+
+[ext_resource type="Script" uid="uid://q82c4j3kect5" path="res://scenes/game_over.gd" id="1_wqhvx"]
+[ext_resource type="Texture2D" uid="uid://brsrb6tiewf7j" path="res://assets/sprites/fondo GameOver.png" id="1_xeevv"]
+[ext_resource type="AudioStream" uid="uid://b23nn884e6a6" path="res://assets/music/sfx_gameover.mp3" id="3_tbwuq"]
+
+[node name="GameOver" type="Control" unique_id=654294837]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqhvx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1828581956]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xeevv")
+stretch_mode = 6
+
+[node name="Título" type="Label" parent="TextureRect" unique_id=206994986]
+layout_mode = 0
+offset_left = 291.00003
+offset_top = 150.0
+offset_right = 975.0
+offset_bottom = 292.0
+scale = Vector2(0.8719028, 0.8330825)
+pivot_offset = Vector2(314.8305, 104.816666)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(7.6319244e-05, 7.6319244e-05, 7.6319244e-05, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=844928652]
+layout_mode = 0
+offset_left = 359.99997
+offset_top = 332.0
+offset_right = 970.0
+offset_bottom = 640.6041
+scale = Vector2(0.9089981, 0.6351179)
+
+[node name="btn_reiniciar" type="Button" parent="VBoxContainer" unique_id=266474896]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Reiniciar"
+
+[node name="Btn_menu" type="Button" parent="VBoxContainer" unique_id=1537909221]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Menú principal"
+
+[node name="sfx_gameover" type="AudioStreamPlayer" parent="." unique_id=513038131]
+stream = ExtResource("3_tbwuq")
+volume_db = 10.0
+
+[node name="puntos" type="Label" parent="." unique_id=1251366001]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 516.00006
+offset_right = 806.38477
+offset_bottom = 616.23535
+scale = Vector2(0.8719028, 0.8330825)
+pivot_offset = Vector2(314.8305, 104.816666)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(7.6319244e-05, 7.6319244e-05, 7.6319244e-05, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Puntos conseguidos"
+horizontal_alignment = 1
+vertical_alignment = 1

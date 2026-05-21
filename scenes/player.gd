@@ -13,6 +13,8 @@ var melee : Resource = preload("res://scenes/melee.tscn")
 var screen_size
 var can_dash = true
 var puntos := 0
+var vidas: int = 3
+var game_over: bool = false
 
 var invulnerable: bool = false
 var tween_parpadeo: Tween = null
@@ -146,11 +148,24 @@ func _fin_parpadeo():
 	tween_parpadeo = null
 
 func kill():
+	if game_over:
+		return
+	
 	if tween_parpadeo != null and tween_parpadeo.is_running():
 		tween_parpadeo.kill()
 	modulate.a = 1.0
 	invulnerable = false
 	
+	vidas -= 1
+	
+	if vidas <= 0:
+		#Game Over de verdad
+		game_over = true
+		GameManager.puntos_finales = puntos
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+		return
+	
+	#Respawn
 	global_position = posicion_inicial_nivel
 	velocity = Vector2.ZERO
 	current_dash_speed = 0.0
