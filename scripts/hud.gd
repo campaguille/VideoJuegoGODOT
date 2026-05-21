@@ -32,6 +32,28 @@ func _ready():
 func update_score(new_score: int):
 	if puntos_label:
 		puntos_label.text = str(new_score)
+		animar_puntos()
+
+func animar_puntos():
+	#Crea un label temporal encima del de puntos
+	var label = Label.new()
+	label.text = "+" + str(puntos_label.text)
+	label.add_theme_color_override("font_color", Color.RED)
+	label.position = puntos_label.global_position + Vector2(0, -10)
+	label.z_index = 10
+	add_child(label)
+	
+	#Sube y se desvanece
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label, "position:y", label.position.y - 40, 0.8)
+	tween.tween_property(label, "modulate:a", 0.0, 0.8)
+	tween.tween_callback(label.queue_free).set_delay(0.8)
+	
+	#Pequeño rebote en el label principal
+	var tween2 = create_tween()
+	tween2.tween_property(puntos_label, "scale", Vector2(1.4, 1.4), 0.1)
+	tween2.tween_property(puntos_label, "scale", Vector2(1.0, 1.0), 0.15)
 
 func update_vida(vida_actual: int, vida_maxima: int):
 	if barra_vida:
