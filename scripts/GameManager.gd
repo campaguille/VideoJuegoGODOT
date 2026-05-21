@@ -7,6 +7,15 @@ var accesorio_cabeza: String = "Ninguno"
 var accesorio_cara: String = "Ninguno"
 var accesorio_cuerpo: String = "Ninguno"
 
+const NIVELES = [
+	"res://scenes/GameScene.tscn",
+	"res://scenes/Nivel2.tscn",
+    "res://scenes/Nivel3.tscn"
+]
+
+var nivel_actual: int = 0
+var transition_scene = preload("res://scenes/transicion.tscn")
+
 func _ready():
 	cargar()
 
@@ -51,22 +60,29 @@ func aplicar_configuracion():
 
 # CONTROL DE PROGRESIÓN DE NIVELES
 func verificar_enemigos_vivos():
-	# Esperamos un frame para asegurar que el enemigo realmente haya sido eliminado de la escena
 	await get_tree().physics_frame
 	
-	# Contamos cuántos enemigos quedan en el grupo "enemy"
 	var enemigos_restantes = get_tree().get_nodes_in_group("enemy").size()
 	
 	if enemigos_restantes == 0:
-		var ruta = get_tree().current_scene.scene_file_path
-		
-		# Lógica de progresión basada en el nombre del archivo de la escena actual
-		if "GameScene" in ruta:
-			get_tree().change_scene_to_file("res://scenes/Nivel2.tscn")
-			
-		elif "Nivel2" in ruta:
-			get_tree().change_scene_to_file("res://scenes/Nivel3.tscn")
-			
-		elif "Nivel3" in ruta:
-			# Al terminar el último nivel, volvemos al menú
-			get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+		await _ir_siguiente_nivel()
+
+func _ir_siguiente_nivel():
+	var transition = transition_scene.instantiate()
+	transition.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().get_root().add_child(transition)
+	
+	await transition.fade_in(0.6)
+	
+	var ruta = get_tree().current_scene.scene_file_path
+	if "GameScene" in ruta:
+		get_tree().change_scene_to_file("res://scenes/Nivel2.tscn")
+	elif "Nivel2" in ruta:
+		get_tree().change_scene_to_file("res://scenes/Nivel3.tscn")
+	elif "Nivel3" in ruta:
+		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+		return
+	
+	await get_tree().process_frame
+	await transition.fade_out(0.6)
+	transition.queue_free()
