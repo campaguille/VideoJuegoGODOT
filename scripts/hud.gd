@@ -2,17 +2,17 @@ extends CanvasLayer
 
 var barra_vida: ProgressBar
 var puntos_label: Label
-var pausa_btn: Button
 var pausa_menu: Node
 var btn_continuar: Button
 var btn_salir: Button
 var btn_reiniciar: Button
 
+@onready var pausa_btn: Button = $MarginContainer/HBoxContainer/pausa
+
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	barra_vida    = get_node_or_null("MarginContainer/HBoxContainer/VBoxContainer/ProgressBar")
 	puntos_label  = get_node_or_null("MarginContainer/HBoxContainer/puntos")
-	pausa_btn     = get_node_or_null("MarginContainer/HBoxContainer/pausa")
 	pausa_menu    = get_node_or_null("menuPausa")
 	btn_continuar = get_node_or_null("menuPausa/ColorRect/VBoxContainer/continuar")
 	btn_reiniciar = get_node_or_null("menuPausa/ColorRect/VBoxContainer/reiniciar")
@@ -24,7 +24,7 @@ func _ready():
 		barra_vida.value     = 100
 
 	if pausa_menu:   pausa_menu.visible = false
-	if pausa_btn:    pausa_btn.pressed.connect(_on_pausa_pressed)
+	#if pausa_btn:    pausa_btn.pressed.connect(_on_pausa_pressed)
 	if btn_continuar: btn_continuar.pressed.connect(_on_continuar_pressed)
 	if btn_reiniciar: btn_reiniciar.pressed.connect(_on_reiniciar_pressed)
 	if btn_salir:     btn_salir.pressed.connect(_on_salir_pressed)
