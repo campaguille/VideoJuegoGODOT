@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcf8vuu6peha4" path="res://assets/sprites/towerDefense_tilesheet.png" id="1_xs4ih"]
 [ext_resource type="PackedScene" uid="uid://bpldhdp65ebf5" path="res://scenes/enemy.tscn" id="3_cxv17"]
 [ext_resource type="Texture2D" uid="uid://b2g15rgcc518f" path="res://assets/sprites/free_wall_dungeon_autotile_14.png" id="4_18ig4"]
-[ext_resource type="AudioStream" uid="uid://bxd1murq1hm56" path="res://assets/music/canción_fondo.mp3" id="5_xs4ih"]
+[ext_resource type="AudioStream" uid="uid://bclt7qu2sjyc" path="res://assets/music/canción_fondo.mp3" id="5_xs4ih"]
 [ext_resource type="PackedScene" uid="uid://c1i16ydecy1gf" path="res://scenes/hud.tscn" id="6_xs4ih"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xs4ih"]

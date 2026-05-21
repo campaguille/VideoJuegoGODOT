@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1i16ydecy1gf"]
 
-[ext_resource type="Script" uid="uid://c0unql77s1xne" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://davrl31u6pvep" path="res://scripts/hud.gd" id="1_ahhtf"]
 
 [node name="HUD" type="CanvasLayer" unique_id=447326329]
 process_mode = 3
@@ -23,6 +23,7 @@ size_flags_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=396598153]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1730708351]
 layout_mode = 2
