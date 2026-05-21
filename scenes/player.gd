@@ -20,6 +20,8 @@ var posicion_inicial_nivel: Vector2 = Vector2.ZERO
 
 @onready var anim = $AnimatedSprite2D
 @onready var hud = get_tree().get_root().get_node("GameScene/HUD")
+@onready var sfx_disparo = $sfxDisparo
+@onready var sfx_puntos = $sfxPuntos
 
 func _ready():
 	add_to_group("player")
@@ -74,6 +76,7 @@ func _process(delta):
 		dash(dash_dir)
 
 func fire():
+	sfx_disparo.play()
 	var offset = 30
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.position = global_position + Vector2.RIGHT.rotated(rotation) * offset
@@ -163,5 +166,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 func add_score(points: int):
 	puntos += points
+	sfx_puntos.play()
 	if hud and hud.has_method("update_score"):
 		hud.update_score(puntos)

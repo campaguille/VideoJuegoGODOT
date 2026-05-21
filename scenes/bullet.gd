@@ -16,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 			body.recibir_danio(15) 
 		elif body.has_method("kill"):
 			body.kill()
-		queue_free()
+			queue_free()
 	else:
 		if body.name != "player" and not body.is_in_group("player"):
 			queue_free()
