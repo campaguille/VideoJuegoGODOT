@@ -176,9 +176,6 @@ func kill():
 		
 	get_tree().call_group("enemy", "_volver_origen")
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
-		
 func add_score(points: int):
 	puntos += points
 	sfx_puntos.play()

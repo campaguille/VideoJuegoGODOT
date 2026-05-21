@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var vida: int = 30
 @export var puntos_al_morir: int = 50
 @export var angle: float = 120.0
-@export var angle_length: float = 350.0
+@export var angle_length: float = 500.0
 @export var distancia_ataque: float = 55.0
 @export var cooldown_dano: float = 1.0
 
@@ -24,7 +24,6 @@ var angle_rad: float
 var esta_quieto_atacando: bool = false
 
 func _ready():
-	# Forzamos que se registre en el grupo al nacer por si falla el editor
 	if not is_in_group("enemy"):
 		add_to_group("enemy")
 		
@@ -140,15 +139,11 @@ func kill():
 	if is_instance_valid(player) and player.has_method("add_score"):
 		player.add_score(puntos_al_morir)
 
-	# CORRECCIÓN CRÍTICA: Lo sacamos del grupo antes de destruirlo 
-	# para que el conteo baje a 0 instantáneamente
 	if is_in_group("enemy"):
 		remove_from_group("enemy")
 
 	queue_free()
-
-	if GameManager and GameManager.has_method("verificar_enemigos_vivos"):
-		GameManager.verificar_enemigos_vivos()
+	GameManager.verificar_enemigos_vivos()
 
 func _on_timer_target_timeout():
 	if not (_en_cono() and _raycast_ok()):

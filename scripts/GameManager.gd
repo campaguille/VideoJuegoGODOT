@@ -64,7 +64,6 @@ func verificar_enemigos_vivos():
 	await get_tree().physics_frame
 	
 	var enemigos_restantes = get_tree().get_nodes_in_group("enemy").size()
-	
 	if enemigos_restantes == 0:
 		await _ir_siguiente_nivel()
 

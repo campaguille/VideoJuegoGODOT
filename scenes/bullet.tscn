@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://paw8mwil0opc"]
 
-[ext_resource type="Script" uid="uid://dtax34vi2ljow" path="res://scenes/bullet.gd" id="1_y25gk"]
+[ext_resource type="Script" uid="uid://bh0nmr1d1xb83" path="res://scenes/bullet.gd" id="1_y25gk"]
 [ext_resource type="Texture2D" uid="uid://cngij03rnfuk6" path="res://assets/sprites/sin fondo/jeringuilla.png" id="2_y25gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
@@ -156,7 +156,6 @@ animations = [{
 
 [node name="bullet" type="Area2D" unique_id=765899012]
 scale = Vector2(1.9446087, 2.319654)
-collision_layer = 65
 collision_mask = 7
 script = ExtResource("1_y25gk")
 
