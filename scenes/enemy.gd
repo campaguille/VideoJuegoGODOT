@@ -108,9 +108,9 @@ func is_in_ray() :
 
 func recibir_danio(cantidad: int):
 	vida -= cantidad
+	
 	var tween = create_tween()
-	modulate = Color.RED # Se pone rojo de golpe
-	# Hace una transición de regreso al blanco (Color(1,1,1)) en 0.2 segundos
+	modulate = Color.RED 
 	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
 	
 	if vida <= 0:
