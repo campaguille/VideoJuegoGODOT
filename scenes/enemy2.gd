@@ -143,17 +143,15 @@ func shoot():
 		return
 	var bullet_instance = bullet.instantiate()
 		
-	var offset = 40
+	var offset = 30
+	var direction_to_player = (player.global_position - global_position).normalized()
 	
+	bullet_instance.global_position = global_position + direction_to_player * offset
+	bullet_instance.rotation = direction_to_player.angle()
+	bullet_instance.direction = direction_to_player
 	bullet_instance.shooter = self
-	bullet_instance.position = global_position + Vector2.RIGHT.rotated(rotation)
-	bullet_instance.rotation_degrees = rotation_degrees
-	bullet_instance.direction = Vector2.RIGHT.rotated(rotation)
 	
-
-
-	
-	get_tree().current_scene.add_child(bullet_instance)
+	get_tree().get_root().add_child(bullet_instance)
 	
 
 

@@ -91,6 +91,12 @@ animations = [{
 
 [node name="enemy" unique_id=539148575 instance=ExtResource("1_wc7mj")]
 script = ExtResource("2_mhmjl")
+speed = null
+dano = null
+vida = null
+puntos_al_morir = null
+angle = null
+angle_length = null
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=1326767952]
 position = Vector2(2, 4)
