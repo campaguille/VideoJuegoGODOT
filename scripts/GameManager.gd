@@ -59,13 +59,12 @@ func aplicar_configuracion():
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
-# CONTROL DE PROGRESIÓN DE NIVELES
 func verificar_enemigos_vivos():
-	await get_tree().physics_frame
+	get_tree().physics_frame
 	
 	var enemigos_restantes = get_tree().get_nodes_in_group("enemy").size()
 	if enemigos_restantes == 0:
-		await _ir_siguiente_nivel()
+		_ir_siguiente_nivel()
 
 func _ir_siguiente_nivel():
 	var transition = transition_scene.instantiate()

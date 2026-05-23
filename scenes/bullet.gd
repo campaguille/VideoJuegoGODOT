@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 700
+var speed = 2000
 var direction = Vector2.RIGHT
 
 func _physics_process(delta):
@@ -14,4 +14,3 @@ func _on_body_entered(body: Node2D):
 		elif body.has_method("kill"):
 			body.kill()
 		queue_free()
-	

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var speed = 400
-@export var dash_distance = 400
-@export var dash_duration = 0.1
-@export var dash_cooldown = 0.6
+@export var speed: float = 500.0
+@export var dash_distance: float  = 400.0
+@export var dash_duration: float  = 0.1
+@export var dash_cooldown: float  = 0.6
 @export var vida_maxima: int = 100
 
 var vida_actual: int = 100
@@ -12,39 +12,20 @@ var bullet : Resource = preload("res://scenes/bullet.tscn")
 var melee : Resource = preload("res://scenes/melee.tscn")
 var screen_size
 var can_dash = true
-var puntos := 0
-var vidas: int = 3
-var game_over: bool = false
+var puntos: int = 0
+var vidas: int = 0
 
 var invulnerable: bool = false
 var tween_parpadeo: Tween = null
 var posicion_inicial_nivel: Vector2 = Vector2.ZERO
 
 @onready var anim = $AnimatedSprite2D
-@onready var hud = get_tree().get_root().get_node("GameScene/HUD")
-@onready var sfx_disparo = $sfxDisparo
-@onready var sfx_puntos = $sfxPuntos
+@onready var hud = get_tree().get_root().get_node("GameScene/HUD")  #referencia al CanvasLayer
 
 func _ready():
-	add_to_group("player")
 	screen_size = get_viewport_rect().size
-	vida_actual = vida_maxima
-	
-	# Detecta el SpawnPoint en el mapa para saber dónde revivir
-	var spawn = get_tree().current_scene.get_node_or_null("SpawnPoint")
-	if spawn:
-		posicion_inicial_nivel = spawn.global_position
-		global_position = posicion_inicial_nivel
-	else:
-		posicion_inicial_nivel = global_position
-
-	if hud and hud.has_method("update_vida"):
-		hud.update_vida(vida_actual, vida_maxima)
 
 func _process(delta):
-	if current_dash_speed > 0.0:
-		return
-
 	var input_dir = Vector2(
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")
@@ -53,6 +34,7 @@ func _process(delta):
 	if input_dir != Vector2.ZERO:
 		if anim.animation != "default" or not anim.is_playing():
 			anim.play("default")
+			
 		velocity = input_dir * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
@@ -78,7 +60,6 @@ func _process(delta):
 		dash(dash_dir)
 
 func fire():
-	sfx_disparo.play()
 	var offset = 30
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.position = global_position + Vector2.RIGHT.rotated(rotation) * offset
@@ -115,6 +96,7 @@ func dash(target_direction: Vector2):
 	await get_tree().create_timer(dash_cooldown).timeout
 	can_dash = true
 
+
 func recibir_danio(cantidad: int):
 	if invulnerable: 
 		return
@@ -128,6 +110,15 @@ func recibir_danio(cantidad: int):
 		return
 		
 	_iniciar_parpadeo()
+
+func kill():
+	
+	GameManager.puntos_finales = puntos
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+
+
+
+
 
 func _iniciar_parpadeo():
 	if tween_parpadeo != null and tween_parpadeo.is_running():
@@ -146,38 +137,11 @@ func _fin_parpadeo():
 	modulate.a = 1.0   
 	invulnerable = false
 	tween_parpadeo = null
-
-func kill():
-	if game_over:
-		return
 	
-	if tween_parpadeo != null and tween_parpadeo.is_running():
-		tween_parpadeo.kill()
-	modulate.a = 1.0
-	invulnerable = false
-	
-	vidas -= 1
-	
-	if vidas <= 0:
-		#Game Over de verdad
-		game_over = true
-		GameManager.puntos_finales = puntos
-		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-		return
-	
-	#Respawn
-	global_position = posicion_inicial_nivel
-	velocity = Vector2.ZERO
-	current_dash_speed = 0.0
-	
-	vida_actual = vida_maxima
-	if hud and hud.has_method("update_vida"):
-		hud.update_vida(vida_actual, vida_maxima)
-		
-	get_tree().call_group("enemy", "_volver_origen")
-
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if "enemy" in body.name:
+		if "dano" in body:
+			recibir_danio(body.dano)
 func add_score(points: int):
 	puntos += points
-	sfx_puntos.play()
-	if hud and hud.has_method("update_score"):
-		hud.update_score(puntos)
+	hud.update_score(puntos)
