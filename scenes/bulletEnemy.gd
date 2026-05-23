@@ -18,7 +18,7 @@ func _on_body_entered(body: Node2D):
 		return
 		
 	if shooter.name != "Player" and body.name == "Player":
-		body.recibir_danio()
+		body.recibir_danio(15)
 		queue_free()
 		return
 		
