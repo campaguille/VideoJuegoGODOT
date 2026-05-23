@@ -19,7 +19,7 @@ var posicion_inicial: Vector2
 var player
 var angle_rad
 var rotacion_inicial
-var bullet: Resource = preload("res://scenes/bullet.tscn")
+var bullet: Resource = preload("res://scenes/bulletEnemy.tscn")
 
 
 func _ready():

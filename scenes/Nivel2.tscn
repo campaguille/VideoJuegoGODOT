@@ -5874,221 +5874,89 @@ rotation = 1.5707964
 [node name="enemy" parent="." unique_id=539148575 instance=ExtResource("4_asj5k")]
 position = Vector2(203, 631)
 rotation = 4.1887903
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy5" parent="." unique_id=1070528060 instance=ExtResource("4_asj5k")]
 position = Vector2(-50.999992, 627)
 rotation = -1.3089969
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy6" parent="." unique_id=160390208 instance=ExtResource("4_asj5k")]
 position = Vector2(555.00006, 222.00002)
 rotation = 1.5707964
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy7" parent="." unique_id=81850370 instance=ExtResource("4_asj5k")]
 position = Vector2(1086, 613)
 rotation = 3.1415927
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy8" parent="." unique_id=1906467738 instance=ExtResource("4_asj5k")]
 position = Vector2(78, 883)
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy10" parent="." unique_id=106408429 instance=ExtResource("4_asj5k")]
 position = Vector2(77, 1046)
 rotation = -6.2831855
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy11" parent="." unique_id=1213423752 instance=ExtResource("4_asj5k")]
 position = Vector2(81, 1223)
 rotation = -6.2831855
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy12" parent="." unique_id=1422363846 instance=ExtResource("4_asj5k")]
 position = Vector2(78, 1374)
 rotation = -6.2831855
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy13" parent="." unique_id=601231245 instance=ExtResource("4_asj5k")]
 position = Vector2(843, 1363)
 rotation = -6.2831855
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy14" parent="." unique_id=631789730 instance=ExtResource("4_asj5k")]
 position = Vector2(2066, 1356)
 rotation = -8.115781
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy15" parent="." unique_id=1490009079 instance=ExtResource("4_asj5k")]
 position = Vector2(934, 213)
 rotation = -12.566371
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy16" parent="." unique_id=499443611 instance=ExtResource("4_asj5k")]
 position = Vector2(1843, 168)
 rotation = -10.995575
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy17" parent="." unique_id=951909264 instance=ExtResource("4_asj5k")]
 position = Vector2(2168, 169)
 rotation = -10.995575
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy18" parent="." unique_id=924846833 instance=ExtResource("4_asj5k")]
 position = Vector2(832, 884)
 rotation = -12.566371
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy20" parent="." unique_id=739549718 instance=ExtResource("4_asj5k")]
 position = Vector2(837, 1137)
 rotation = -12.566371
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy29" parent="." unique_id=1410207492 instance=ExtResource("4_asj5k")]
 position = Vector2(2271, 1284.9999)
 rotation = -8.377581
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy30" parent="." unique_id=1534912349 instance=ExtResource("4_asj5k")]
 position = Vector2(1850.9998, 1295.0001)
 rotation = -7.5921826
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy24" parent="." unique_id=1088072063 instance=ExtResource("4_asj5k")]
 position = Vector2(1450, 1141)
 rotation = -10.995575
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy28" parent="." unique_id=238605395 instance=ExtResource("4_asj5k")]
 position = Vector2(1546, 209)
 rotation = -9.424778
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy2" parent="." unique_id=1499324831 instance=ExtResource("4_asj5k")]
 position = Vector2(386, 129)
 rotation = 1.5707964
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy3" parent="." unique_id=1206721160 instance=ExtResource("4_asj5k")]
 position = Vector2(741, 128)
 rotation = 1.5707964
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="enemy4" parent="." unique_id=1521959880 instance=ExtResource("4_asj5k")]
 position = Vector2(1261, 303)
 rotation = 1.5707964
-speed = 200.0
-dano = 10
-vida = 30
-puntos_al_morir = 50
-angle = 120.0
-angle_length = 500.0
 
 [node name="Música de fondo" type="AudioStreamPlayer" parent="." unique_id=152340888]
 stream = ExtResource("5_wgh4u")
