@@ -5965,4 +5965,3 @@ autoplay = true
 parameters/looping = true
 
 [node name="HUD" parent="." unique_id=447326329 instance=ExtResource("6_cyxi0")]
-visible = false

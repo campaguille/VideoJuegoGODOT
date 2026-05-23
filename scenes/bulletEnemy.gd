@@ -17,9 +17,11 @@ func _on_body_entered(body: Node2D):
 	if body == shooter:
 		return
 		
-	if shooter.name == "Player" and body.is_in_group("enemy"):
-		body.recibir_danio(15)
+	if shooter.name != "Player" and body.name == "Player":
+		body.recibir_danio()
 		queue_free()
 		return
+		
+
 	
 	queue_free()
