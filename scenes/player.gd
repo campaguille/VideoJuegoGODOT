@@ -142,6 +142,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if "enemy" in body.name:
 		if "dano" in body:
 			recibir_danio(body.dano)
+
+
 func add_score(points: int):
 	puntos += points
 	hud.update_score(puntos)
