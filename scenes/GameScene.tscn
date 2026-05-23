@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b2g15rgcc518f" path="res://assets/sprites/free_wall_dungeon_autotile_14.png" id="4_18ig4"]
 [ext_resource type="AudioStream" uid="uid://bxd1murq1hm56" path="res://assets/music/canción_fondo.mp3" id="5_xs4ih"]
 [ext_resource type="PackedScene" uid="uid://c1i16ydecy1gf" path="res://scenes/hud.tscn" id="6_xs4ih"]
+[ext_resource type="PackedScene" uid="uid://dlvsqd72v14fl" path="res://scenes/alpiste.tscn" id="8_vijgj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xs4ih"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -6174,3 +6175,6 @@ autoplay = true
 parameters/looping = true
 
 [node name="HUD" parent="." unique_id=447326329 instance=ExtResource("6_xs4ih")]
+
+[node name="Area2D" parent="." unique_id=1816189800 instance=ExtResource("8_vijgj")]
+position = Vector2(932, 436)

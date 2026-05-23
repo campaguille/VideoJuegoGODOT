@@ -13,6 +13,13 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7la6k"]
+bg_color = Color(0, 0, 0, 0.58431375)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucygd"]
 bg_color = Color(0, 0, 0, 0.58431375)
 corner_radius_top_left = 20
@@ -27,6 +34,13 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nypq"]
+bg_color = Color(0, 0, 0, 0.58431375)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mipys"]
 bg_color = Color(0, 0, 0, 0.58431375)
 corner_radius_top_left = 20
@@ -36,6 +50,13 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
 bg_color = Color(0, 0, 0, 0.74509805)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bky6r"]
+bg_color = Color(0, 0, 0, 0.58431375)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -104,6 +125,7 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_l72w3")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7la6k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ucygd")
 text = "JUGAR"
 
@@ -113,6 +135,7 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_l72w3")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_l72w3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2nypq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mipys")
 text = "TUTORIAL"
 
@@ -122,6 +145,7 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_l72w3")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_826wr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bky6r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8a8k8")
 text = "SALIR"
 

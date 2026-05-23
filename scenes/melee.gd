@@ -1,11 +1,9 @@
 extends Area2D
 
 @onready var anim = $AnimatedSprite2D
-@onready var audio = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	anim.play("slash")
-	audio.play()
 	await get_tree().create_timer(0.2).timeout
 	queue_free()
 

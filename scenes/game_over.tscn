@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://o72nda57wade"]
 
-[ext_resource type="Script" uid="uid://q82c4j3kect5" path="res://scenes/game_over.gd" id="1_wqhvx"]
+[ext_resource type="Script" uid="uid://dq7wx32cloa3u" path="res://scenes/game_over.gd" id="1_wqhvx"]
 [ext_resource type="Texture2D" uid="uid://brsrb6tiewf7j" path="res://assets/sprites/fondo GameOver.png" id="1_xeevv"]
+[ext_resource type="FontFile" uid="uid://7a4nucluxor2" path="res://assets/fonts/GrapeSoda.ttf" id="3_racf3"]
 [ext_resource type="AudioStream" uid="uid://b23nn884e6a6" path="res://assets/music/sfx_gameover.mp3" id="3_tbwuq"]
 
 [node name="GameOver" type="Control" unique_id=654294837]
@@ -35,9 +36,11 @@ offset_right = 975.0
 offset_bottom = 292.0
 scale = Vector2(0.8719028, 0.8330825)
 pivot_offset = Vector2(314.8305, 104.816666)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(7.6319244e-05, 7.6319244e-05, 7.6319244e-05, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_racf3")
 theme_override_font_sizes/font_size = 120
 text = "Game over"
 horizontal_alignment = 1
@@ -53,11 +56,13 @@ scale = Vector2(0.9089981, 0.6351179)
 
 [node name="btn_reiniciar" type="Button" parent="VBoxContainer" unique_id=266474896]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_racf3")
 theme_override_font_sizes/font_size = 100
 text = "Reiniciar"
 
 [node name="Btn_menu" type="Button" parent="VBoxContainer" unique_id=1537909221]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_racf3")
 theme_override_font_sizes/font_size = 100
 text = "Menú principal"
 
@@ -76,6 +81,7 @@ pivot_offset = Vector2(314.8305, 104.816666)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(7.6319244e-05, 7.6319244e-05, 7.6319244e-05, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_racf3")
 theme_override_font_sizes/font_size = 60
 text = "Puntos conseguidos"
 horizontal_alignment = 1

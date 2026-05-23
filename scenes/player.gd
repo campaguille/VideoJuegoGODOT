@@ -5,6 +5,10 @@ extends CharacterBody2D
 @export var dash_duration: float  = 0.1
 @export var dash_cooldown: float  = 0.6
 @export var vida_maxima: int = 100
+@onready var sfxDisparo = $sfxDisparo
+@onready var sfxPuntos = $sfxPuntos
+@onready var sfxMelee = $sfxMelee
+
 
 var vida_actual: int = 100
 var current_dash_speed: float = 0.0
@@ -49,6 +53,7 @@ func _process(delta):
 		fire()
 	
 	if Input.is_action_just_pressed("melee"):
+		sfxMelee.play()
 		var offset = 50
 		var melee_instance : Area2D = melee.instantiate()
 		melee_instance.position = Vector2.RIGHT * offset
@@ -60,6 +65,7 @@ func _process(delta):
 		dash(dash_dir)
 
 func fire():
+	sfxDisparo.play()
 	var offset = 30
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.position = global_position + Vector2.RIGHT.rotated(rotation) * offset
@@ -148,5 +154,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func add_score(points: int):
+	sfxPuntos.play()
 	puntos += points
 	hud.update_score(puntos)
+	
+func curar(cantidad: int):
+	if cantidad <= 0:
+		return
+	
+	vida_actual = clamp(vida_actual + cantidad, 0, vida_maxima)
+	
+	if hud and hud.has_method("update_vida"):
+		hud.update_vida(vida_actual, vida_maxima)

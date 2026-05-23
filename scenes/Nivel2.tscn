@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://k8vuels6avro" path="res://scenes/enemy2.tscn" id="4_asj5k"]
 [ext_resource type="AudioStream" uid="uid://bxd1murq1hm56" path="res://assets/music/canción_fondo.mp3" id="5_wgh4u"]
 [ext_resource type="PackedScene" uid="uid://c1i16ydecy1gf" path="res://scenes/hud.tscn" id="6_cyxi0"]
+[ext_resource type="PackedScene" uid="uid://dlvsqd72v14fl" path="res://scenes/alpiste.tscn" id="7_cyxi0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xs4ih"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -5965,3 +5966,6 @@ autoplay = true
 parameters/looping = true
 
 [node name="HUD" parent="." unique_id=447326329 instance=ExtResource("6_cyxi0")]
+
+[node name="Area2D" parent="." unique_id=1816189800 instance=ExtResource("7_cyxi0")]
+position = Vector2(2027, 176)
