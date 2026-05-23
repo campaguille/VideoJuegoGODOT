@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var timer = $TimerTarget
 @onready var anim = $AnimatedSprite2D
 
-@export var speed: float = 500.0
+@export var speed: float = 200.0
 @export var dano: int = 10
 @export var vida: int = 30
 @export var puntos_al_morir: int = 50

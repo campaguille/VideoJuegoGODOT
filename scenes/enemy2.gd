@@ -136,7 +136,6 @@ func _on_timer_timeout():
 func _on_timer_target_timeout():
 	player_target = false
 	shoot_timer.stop()
-	
 func shoot():
 	
 	if not is_instance_valid(player):

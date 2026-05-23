@@ -158,10 +158,13 @@ dano = 100
 vida = 300
 puntos_al_morir = 1000
 angle = 360.0
-distancia_ataque = 100.0
-cooldown_dano = 0.2
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=365584560]
+visible = false
+position = Vector2(-4.4181786, 0)
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=1326767952]
-scale = Vector2(0.1619469, 0.19609144)
+position = Vector2(-4.0000005, 0.19271994)
+scale = Vector2(0.16815898, 0.19609144)
 sprite_frames = SubResource("SpriteFrames_50oie")
 frame_progress = 0.3046927
