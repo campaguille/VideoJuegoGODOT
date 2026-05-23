@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://hbda0ulxbxha"]
 
-[ext_resource type="Script" uid="uid://bsw6q2k74o6fw" path="res://scripts/GameManager.gd" id="1_6ytau"]
+[ext_resource type="Script" uid="uid://ca2iag8q737yn" path="res://scripts/GameManager.gd" id="1_6ytau"]
 [ext_resource type="PackedScene" uid="uid://dugch38edimw4" path="res://scenes/player.tscn" id="1_vh257"]
 [ext_resource type="Texture2D" uid="uid://bcf8vuu6peha4" path="res://assets/sprites/towerDefense_tilesheet.png" id="1_xs4ih"]
 [ext_resource type="PackedScene" uid="uid://bpldhdp65ebf5" path="res://scenes/enemy.tscn" id="3_cxv17"]
@@ -5886,8 +5886,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy5" parent="." unique_id=525132569 instance=ExtResource("3_cxv17")]
 position = Vector2(473, 641)
@@ -5898,8 +5896,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy7" parent="." unique_id=1983256287 instance=ExtResource("3_cxv17")]
 position = Vector2(384, 383)
@@ -5910,8 +5906,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy8" parent="." unique_id=528233755 instance=ExtResource("3_cxv17")]
 position = Vector2(633, 408)
@@ -5922,8 +5916,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy6" parent="." unique_id=1402848409 instance=ExtResource("3_cxv17")]
 position = Vector2(342, 701)
@@ -5934,8 +5926,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy2" parent="." unique_id=1562312231 instance=ExtResource("3_cxv17")]
 position = Vector2(947, 106)
@@ -5946,8 +5936,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy3" parent="." unique_id=490633166 instance=ExtResource("3_cxv17")]
 position = Vector2(953, 229.99994)
@@ -5958,8 +5946,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy4" parent="." unique_id=112547934 instance=ExtResource("3_cxv17")]
 position = Vector2(463, 1138)
@@ -5970,8 +5956,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy9" parent="." unique_id=1273940857 instance=ExtResource("3_cxv17")]
 position = Vector2(894, 1063)
@@ -5982,8 +5966,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy10" parent="." unique_id=2011934609 instance=ExtResource("3_cxv17")]
 position = Vector2(720.00006, 967)
@@ -5994,8 +5976,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy11" parent="." unique_id=1417233724 instance=ExtResource("3_cxv17")]
 position = Vector2(790.00006, 1255)
@@ -6006,8 +5986,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy12" parent="." unique_id=48605390 instance=ExtResource("3_cxv17")]
 position = Vector2(284, 1354)
@@ -6018,8 +5996,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy28" parent="." unique_id=953671444 instance=ExtResource("3_cxv17")]
 position = Vector2(-89, 1065)
@@ -6030,8 +6006,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy29" parent="." unique_id=863876638 instance=ExtResource("3_cxv17")]
 position = Vector2(22, 720)
@@ -6042,8 +6016,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy13" parent="." unique_id=1806752561 instance=ExtResource("3_cxv17")]
 position = Vector2(541, 1354)
@@ -6054,8 +6026,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy14" parent="." unique_id=1780537108 instance=ExtResource("3_cxv17")]
 position = Vector2(1135, 1401)
@@ -6066,8 +6036,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy15" parent="." unique_id=1431383416 instance=ExtResource("3_cxv17")]
 position = Vector2(1553, 1349)
@@ -6078,8 +6046,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy16" parent="." unique_id=1089972405 instance=ExtResource("3_cxv17")]
 position = Vector2(1885, 1253)
@@ -6090,8 +6056,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy17" parent="." unique_id=77796479 instance=ExtResource("3_cxv17")]
 position = Vector2(2123, 138)
@@ -6102,8 +6066,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy18" parent="." unique_id=553204112 instance=ExtResource("3_cxv17")]
 position = Vector2(1801, 322)
@@ -6114,8 +6076,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy19" parent="." unique_id=1209586410 instance=ExtResource("3_cxv17")]
 position = Vector2(2123, 322)
@@ -6126,8 +6086,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy20" parent="." unique_id=1316822773 instance=ExtResource("3_cxv17")]
 position = Vector2(1651, 130)
@@ -6138,8 +6096,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy21" parent="." unique_id=1633754987 instance=ExtResource("3_cxv17")]
 position = Vector2(2332, 1082)
@@ -6150,8 +6106,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy22" parent="." unique_id=1716040077 instance=ExtResource("3_cxv17")]
 position = Vector2(1768, 1182)
@@ -6162,8 +6116,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy23" parent="." unique_id=122899836 instance=ExtResource("3_cxv17")]
 position = Vector2(1476.0001, 718)
@@ -6174,8 +6126,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy24" parent="." unique_id=830065673 instance=ExtResource("3_cxv17")]
 position = Vector2(1773.0002, 718.0001)
@@ -6186,8 +6136,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy25" parent="." unique_id=274899177 instance=ExtResource("3_cxv17")]
 position = Vector2(2136, 697)
@@ -6198,8 +6146,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy26" parent="." unique_id=1707622797 instance=ExtResource("3_cxv17")]
 position = Vector2(1873, 797.0001)
@@ -6210,8 +6156,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="enemy27" parent="." unique_id=967843588 instance=ExtResource("3_cxv17")]
 position = Vector2(1379.9999, 229.00012)
@@ -6222,8 +6166,6 @@ vida = null
 puntos_al_morir = null
 angle = null
 angle_length = null
-distancia_ataque = null
-cooldown_dano = null
 
 [node name="Música de fondo" type="AudioStreamPlayer" parent="." unique_id=152340888]
 stream = ExtResource("5_xs4ih")

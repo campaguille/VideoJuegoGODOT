@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://paw8mwil0opc"]
 
-[ext_resource type="Script" uid="uid://clb0basefwp0m" path="res://scenes/bullet.gd" id="1_y25gk"]
+[ext_resource type="Script" uid="uid://baln4y43whqxf" path="res://scenes/bullet.gd" id="1_y25gk"]
 [ext_resource type="Texture2D" uid="uid://cngij03rnfuk6" path="res://assets/sprites/sin fondo/jeringuilla.png" id="2_y25gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
@@ -167,6 +167,5 @@ position = Vector2(-0.54080725, -0.17163754)
 rotation = -3.1447103
 scale = Vector2(0.068406306, 0.06046107)
 sprite_frames = SubResource("SpriteFrames_eb1au")
-frame_progress = 0.9440663
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

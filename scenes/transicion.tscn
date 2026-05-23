@@ -1,28 +1,24 @@
 [gd_scene format=3 uid="uid://corrihbwxxdol"]
 
-[ext_resource type="Script" uid="uid://w2lk5sxbxml3" path="res://scenes/transicion.gd" id="1_g8v3h"]
-[ext_resource type="Texture2D" uid="uid://bdkbl0n2nt2j3" path="res://assets/sprites/fondoTransicion.jpg" id="2_bb8d7"]
+[ext_resource type="Script" uid="uid://c386h34xcttv8" path="res://scenes/transicion.gd" id="1_g8v3h"]
+[ext_resource type="Texture2D" uid="uid://20uam642bthj" path="res://assets/sprites/Fondo.jpg" id="2_bb8d7"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1306964794]
 script = ExtResource("1_g8v3h")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=406196708]
+modulate = Color(0, 0, 0, 1)
 layout_direction = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_right = 2.0
-offset_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 12.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_bb8d7")
 stretch_mode = 6
 
-[node name="Label" type="Label" parent="." unique_id=1189703256]
-offset_left = 411.0
-offset_top = 301.0
-offset_right = 1207.0
-offset_bottom = 396.0
-theme_override_font_sizes/font_size = 80
-text = "Pasas al siguiente nivel !!"
+[node name="Node2D" type="Node2D" parent="TextureRect" unique_id=1607256814]

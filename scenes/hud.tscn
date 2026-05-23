@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1i16ydecy1gf"]
 
-[ext_resource type="Script" uid="uid://bupsxmldu5326" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://c0unql77s1xne" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://7a4nucluxor2" path="res://assets/fonts/GrapeSoda.ttf" id="2_oo0fn"]
 
 [node name="HUD" type="CanvasLayer" unique_id=447326329]
 process_mode = 3
@@ -27,9 +28,11 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1730708351]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_oo0fn")
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1688753960]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_oo0fn")
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=2114517999]
 layout_mode = 2
@@ -37,6 +40,7 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=745555520]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_oo0fn")
 theme_override_font_sizes/font_size = 25
 text = "Puntos"
 
@@ -63,6 +67,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -51.0
+offset_right = 105.0
+offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0, 0.23137255, 0.5019608)
@@ -80,27 +88,32 @@ offset_right = 108.0
 offset_bottom = 109.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 9
 alignment = 1
 
 [node name="pausa" type="Label" parent="menuPausa/ColorRect/VBoxContainer" unique_id=761599874]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 75
 text = "Menú pausa"
 horizontal_alignment = 1
 
 [node name="continuar" type="Button" parent="menuPausa/ColorRect/VBoxContainer" unique_id=1153777608]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 30
 text = "Continuar"
 
 [node name="reiniciar" type="Button" parent="menuPausa/ColorRect/VBoxContainer" unique_id=281955306]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 30
 text = "Reiniciar"
 
 [node name="salir" type="Button" parent="menuPausa/ColorRect/VBoxContainer" unique_id=786973628]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 30
 text = "Salir"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/pausa" to="." method="_on_pausa_pressed"]

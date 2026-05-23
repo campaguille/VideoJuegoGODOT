@@ -1,9 +1,52 @@
 [gd_scene format=3 uid="uid://di82jdtw2nwmq"]
 
 [ext_resource type="Script" uid="uid://bqrhmnjlugy3h" path="res://scripts/MainMenu.gd" id="1_2wh52"]
-[ext_resource type="Texture2D" uid="uid://6oq1ms3e25vo" path="res://assets/sprites/FondoPantallaInicio.png" id="1_yqorp"]
 [ext_resource type="AudioStream" uid="uid://bxd1murq1hm56" path="res://assets/music/canción_fondo.mp3" id="2_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://dchupai4ivfgw" path="res://assets/sprites/FondoMenu.png" id="2_l72w3"]
+[ext_resource type="FontFile" uid="uid://7a4nucluxor2" path="res://assets/fonts/GrapeSoda.ttf" id="3_l72w3"]
 [ext_resource type="AudioStream" uid="uid://dw0a2vrcc3hlk" path="res://assets/music/sonido click.mp3" id="4_ow34m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
+bg_color = Color(0, 0, 0, 0.74509805)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucygd"]
+bg_color = Color(0, 0, 0, 0.58431375)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l72w3"]
+bg_color = Color(0, 0, 0, 0.74509805)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mipys"]
+bg_color = Color(0, 0, 0, 0.58431375)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
+bg_color = Color(0, 0, 0, 0.74509805)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8a8k8"]
+bg_color = Color(0, 0, 0, 0.58431375)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="MainMenu" type="Control" unique_id=916452086]
 layout_mode = 3
@@ -20,26 +63,28 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_right = 2.0
-offset_bottom = 1.0
+offset_left = -2.0
+offset_top = -4.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yqorp")
+texture = ExtResource("2_l72w3")
 stretch_mode = 6
 
 [node name="Título" type="Label" parent="." unique_id=875599622]
 layout_mode = 0
-offset_left = 312.00003
-offset_top = 93.0
-offset_right = 996.0
-offset_bottom = 235.0
+offset_left = 178.0
+offset_top = 103.0
+offset_right = 1162.0
+offset_bottom = 254.0
 scale = Vector2(0.8719028, 0.8330825)
 pivot_offset = Vector2(314.8305, 104.816666)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(7.6319244e-05, 7.6319244e-05, 7.6319244e-05, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 120
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("3_l72w3")
+theme_override_font_sizes/font_size = 150
 text = "DOCTOR PALOMO"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -49,28 +94,35 @@ layout_mode = 0
 offset_left = 370.0
 offset_top = 307.0
 offset_right = 948.6592
-offset_bottom = 823.0
-scale = Vector2(0.9089981, 0.6351179)
+offset_bottom = 721.0
+scale = Vector2(0.9, 0.8)
+theme_override_constants/separation = 15
 
 [node name="btn_jugar" type="Button" parent="VBoxContainer" unique_id=1865483550]
 layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_l72w3")
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ucygd")
 text = "JUGAR"
 
 [node name="Btn tutorial" type="Button" parent="VBoxContainer" unique_id=117684590]
 layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_l72w3")
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_l72w3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mipys")
 text = "TUTORIAL"
-
-[node name="Btn personalizar" type="Button" parent="VBoxContainer" unique_id=435325755]
-layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "PERSONALIZAR
-"
 
 [node name="Btn salir" type="Button" parent="VBoxContainer" unique_id=172228646]
 layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_l72w3")
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_826wr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8a8k8")
 text = "SALIR"
 
 [node name="Música de fondo" type="AudioStreamPlayer" parent="." unique_id=114627870]
@@ -85,5 +137,4 @@ volume_db = 10.0
 
 [connection signal="pressed" from="VBoxContainer/btn_jugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Btn tutorial" to="." method="_on_btn_tutorial_pressed"]
-[connection signal="pressed" from="VBoxContainer/Btn personalizar" to="." method="_on_btn_personalizar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Btn salir" to="." method="_on_btn_salir_pressed"]
