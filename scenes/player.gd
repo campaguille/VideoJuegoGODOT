@@ -65,6 +65,9 @@ func fire():
 	bullet_instance.position = global_position + Vector2.RIGHT.rotated(rotation) * offset
 	bullet_instance.rotation_degrees = rotation_degrees
 	bullet_instance.direction = Vector2.RIGHT.rotated(rotation)
+	
+	bullet_instance.shooter = self
+	
 	get_tree().get_root().add_child(bullet_instance)
 
 func dash(target_direction: Vector2):
