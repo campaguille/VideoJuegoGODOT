@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpldhdp65ebf5"]
 
-[ext_resource type="Script" uid="uid://dy7ogc2xmddbp" path="res://scenes/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://dmu02yy4j4esn" path="res://scenes/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://dmfnpjx5t6y3l" path="res://assets/sprites/ardillaanimacion.png" id="2_md0e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
