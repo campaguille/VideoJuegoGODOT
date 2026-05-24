@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlvsqd72v14fl"]
 
-[ext_resource type="Script" uid="uid://3hw0drpidjhm" path="res://scenes/alpiste.gd" id="1_6qfyc"]
+[ext_resource type="Script" uid="uid://d1anocr741lvb" path="res://scenes/alpiste.gd" id="1_6qfyc"]
 [ext_resource type="Texture2D" uid="uid://didv2jcrpv3wf" path="res://assets/sprites/Alpiste.png" id="1_pgn8l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6qfyc"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dugch38edimw4"]
 
-[ext_resource type="Script" uid="uid://cc5iil5vpbuig" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://ciivpmxsikc66" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://btmm6tsa5l3s" path="res://assets/sprites/ChatGPT Image 18 may 2026, 20_14_36.png" id="2_g2els"]
 [ext_resource type="AudioStream" uid="uid://b1vunb8l1xxxr" path="res://assets/music/sonido disparo.mp3" id="3_dqkch"]
 [ext_resource type="AudioStream" uid="uid://cklamvb1pkhey" path="res://assets/music/sword-slash-1.mp3" id="4_qlg0r"]

@@ -21,6 +21,7 @@ var rotacion_inicial
 
 
 func _ready():
+	navigation_agent_2d.debug_enabled = false
 	player = get_parent().get_node("Player")
 	angle_rad = deg_to_rad(angle / 2)
 	posicion_inicial = global_position
@@ -28,11 +29,11 @@ func _ready():
 	add_to_group("enemy")
 
 
-func _draw():
-	var left_dir = direction_angle.rotated(-angle_rad) * angle_length
-	var right_dir = direction_angle.rotated(angle_rad) * angle_length
-	draw_line(Vector2.ZERO, left_dir, Color.YELLOW, 2)
-	draw_line(Vector2.ZERO, right_dir, Color.YELLOW, 2)
+#func _draw():
+#	var left_dir = direction_angle.rotated(-angle_rad) * angle_length
+#	var right_dir = direction_angle.rotated(angle_rad) * angle_length
+#	draw_line(Vector2.ZERO, left_dir, Color.YELLOW, 2)
+#	draw_line(Vector2.ZERO, right_dir, Color.YELLOW, 2)
 
 
 func _physics_process(_delta):

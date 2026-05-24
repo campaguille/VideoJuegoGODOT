@@ -80,7 +80,6 @@ func _ir_siguiente_nivel():
 		get_tree().change_scene_to_file("res://scenes/Nivel3.tscn")
 	elif "Nivel3" in ruta:
 		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
-		return
 	
 	await get_tree().process_frame
 	await transition.fade_out(0.6)

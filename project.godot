@@ -18,7 +18,7 @@ config/icon="uid://bfyrdkd0deu00"
 [autoload]
 
 MCPRuntime="*uid://iihkt80xq6se"
-GameManager="*uid://ca2iag8q737yn"
+GameManager="*uid://bc375mjoj5kp3"
 
 [display]
 
